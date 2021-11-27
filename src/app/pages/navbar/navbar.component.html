@@ -1,0 +1,102 @@
+<div class="">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light bg-success">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="">
+        <img
+          class="img-thumnails img-logo"
+          src="../../../assets/Images/logo-main-logo-blue.svg"
+          alt=""
+        />
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        (click)="isShown = !isShown"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse justify-content-end navbar-collapse"
+        [ngClass]="{ show: isShown }"
+        id="navbarTogglerDemo03"
+      >
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link active custom-menu"
+              aria-current="page"
+              routerLink=""
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link custom-menu"
+              aria-current="page"
+              routerLink="ask-fatwas"
+              >Ask Question</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link custom-menu"
+              aria-current="page"
+              routerLink="fatwas"
+              >Fatwa</a
+            >
+          </li>
+          <li class="nav-item min-height">
+            <a
+              class="nav-link custom-menu"
+              aria-current="page"
+              routerLink="about-us"
+              >About Us</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active custom-menu"
+              aria-current="page"
+              routerLink="contact-us"
+              >Contact Us</a
+            >
+          </li>
+          <form class="d-flex">
+            <input
+              class="form-control custom-menu"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-sm border custom-menu px-2" type="button">
+              <i
+                class="fa fa-search px-1"
+                aria-hidden="true"
+                style="font-size: larger"
+              ></i>
+            </button>
+          </form>
+          <li class="nav-item">
+            <a
+              class="nav-link active custom-menu"
+              aria-current="page"
+              routerLink="contact-us"
+            >
+              <i
+                class="fa fa-user px-1"
+                style="font-size: larger"
+                aria-hidden="true"
+              ></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
