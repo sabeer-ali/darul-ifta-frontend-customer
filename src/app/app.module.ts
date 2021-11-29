@@ -13,6 +13,7 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { AskFatwasComponent } from './pages/ask-fatwas/ask-fatwas.component';
 import { FatwasComponent } from './pages/fatwas/fatwas.component';
 import { HomeComponent } from './pages/home/home.component';
+import { FooterComponent } from './layouts/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HomeComponent } from './pages/home/home.component';
     NavbarComponent,
     AskFatwasComponent,
     FatwasComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

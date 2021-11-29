@@ -21,3 +21,21 @@
 .nav-link {
   //   padding: 0 !important;
 }
+
+@media only screen and (max-device-width: 480px) {
+  .navbar-container ::ng-deep .nav-item {
+    margin-top: 5px;
+  }
+
+  .navbar-container ::ng-deep .nav-item a {
+    padding-left: 5px;
+  }
+
+  .search-nav {
+    margin: 10px 0 8px 0;
+  }
+}
+@media only screen and (device-width: 768px) {
+  .navbar-container {
+  }
+}

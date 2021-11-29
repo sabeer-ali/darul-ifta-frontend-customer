@@ -165,7 +165,7 @@ ul li {
 
 .article-col h6 {
   background-color: $theme-primary-color;
-  padding: 0.5em;
+  padding: 0.4em;
   color: #fff;
 }
 
@@ -175,3 +175,48 @@ ul li {
   color: #fff;
 }
 //  End
+
+@media only screen and (min-width: 960px) {
+  /* styles for browsers larger than 960px; */
+}
+@media only screen and (min-width: 1440px) {
+  /* styles for browsers larger than 1440px; */
+}
+@media only screen and (min-width: 2000px) {
+  /* for sumo sized (mac) screens */
+}
+
+@media only screen and (max-device-width: 480px) {
+  .article-container {
+    width: 100%;
+  }
+  .article-col {
+    width: 90%;
+    margin: 10px auto;
+  }
+  .max-width {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+@media only screen and (device-width: 768px) {
+  .article-container {
+    width: 100%;
+  }
+  .article-col {
+    width: 90%;
+    margin: 10px auto;
+  }
+  .max-width {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* For portrait layouts only */
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* For landscape layouts only */
+}
