@@ -3,13 +3,13 @@
   <div class="row col-md-11">
     <div class="col-md-8 d-flex flex-column justify-content-center">
       <div class="max-width">
-        <h2 class="my-2">Darul Ifta Kauzariyya</h2>
-        <h6 class="my-4">
+        <h2 class="my-2 head">Darul Ifta Kauzariyya</h2>
+        <h6 class="my-4 desc">
           A site for online fatwas (Islamic queries) running under the
           supervision of Al Jamiathul Kauzariyya Fatwa board to guide humanity
           to authentic rulings of Islam.
         </h6>
-        <h5 class="my-4">
+        <h5 class="my-4 arabic-desc">
           ن َ ُ م َ ْل ع َ َ لا تـ ْ ـم ُ ُن كنت ِ ـر إ ِ ّ ْك ِ َ ٱلذ ْ ـل ه َ
           ٓا أ و ُ ٔـل َ ـ ْ س َ ف
         </h5>
@@ -33,5 +33,166 @@
     </div>
   </div>
 </div>
-
 <!-- slider End-->
+
+<!-- side menus -->
+<div class="row mx-0">
+  <div class="col-md-3">
+    <!-- categories -->
+    <!-- categories End-->
+    <div class="col-md-10 mx-auto side-accord-container shadow">
+      <h6 class="text-white green">Categories</h6>
+      <div class="l-green"></div>
+      <!-- side  Accordtion-->
+      <accordion [isAnimated]="true" class="accordian">
+        <accordion-group heading="Faiths & Beliefs (20">
+          <ul>
+            <li>faith (15)</li>
+            <li>Beliefs (5)</li>
+          </ul>
+        </accordion-group>
+        <accordion-group heading="Prayers & Duties (25)">
+          <ul>
+            <li>Prayers (15)</li>
+            <li>Duties (10)</li>
+          </ul>
+        </accordion-group>
+        <accordion-group heading="Transactions & Dealings (40)">
+          <ul>
+            <li>Transactions (20)</li>
+            <li>Dealings (20)</li>
+          </ul>
+        </accordion-group>
+      </accordion>
+      <!-- side  Accordtion End-->
+
+      <!-- categories 2 -->
+      <h6 class="text-white green mt-5">Madhab</h6>
+      <div class="l-green"></div>
+      <ul class="mt-4">
+        <li>Hanafi Madhab</li>
+        <li>Shafi Madhab</li>
+        <li>Common</li>
+      </ul>
+      <!-- categories 2 End-->
+    </div>
+    <!-- categories End-->
+
+    <!-- custom details -->
+    <div class="col-md-10 mx-auto custom-details shadow">
+      <!-- visitor -->
+      <div class="custom-details-column">
+        <h6>Visitor</h6>
+        <div>14332</div>
+      </div>
+      <!-- visitor End -->
+
+      <!-- visitor -->
+      <div class="custom-details-column">
+        <h6>Total Fatwas</h6>
+        <div>14332</div>
+      </div>
+
+      <!-- visitor End -->
+      <!-- visitor -->
+      <div class="custom-details-column">
+        <h6>Registered Users</h6>
+        <div>14332</div>
+      </div>
+
+      <!-- visitor End -->
+      <!-- visitor -->
+      <div class="custom-details-column">
+        <h6>Last Updated</h6>
+        <div>14332</div>
+      </div>
+
+      <!-- visitor End -->
+    </div>
+    <!-- custom details End -->
+
+    <!-- portal details -->
+    <div class="col-md-10 mx-auto portal-details mt-5 shadow p-2">
+      <!-- heading -->
+      <h6>Join Our Darul Ifta Portel</h6>
+      <div class="">
+        <div>
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text portal-btn shadow" id="name"
+              >Name</span
+            >
+            <input
+              type="text"
+              class="form-control portal-input shadow"
+              aria-label="Sizing example input"
+              aria-describedby="name"
+            />
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text portal-btn shadow" id="email"
+              >Email</span
+            >
+            <input
+              type="text"
+              class="form-control portal-input shadow"
+              aria-label="Sizing example input"
+              aria-describedby="email"
+            />
+          </div>
+          <div class="d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-secondary fsize-2"
+            >
+              JOIN
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- visitor End -->
+    </div>
+    <!-- portal details End-->
+  </div>
+  <!-- side menus End -->
+
+  <!-- tab menus -->
+  <div class="col-md-8 tab-container shadow rounded">
+    <tabset #tabset class="pt-4">
+      <tab tab1 heading="English" id="first" #first>English</tab>
+      <tab tab1 heading="മലയാളം" id="first" #first>Malayalam</tab>
+      <tab tab1 heading="العربيــــــــــــــــــة" id="first" #first
+        >Arabic</tab
+      >
+      <tab tab2 heading="اردو" id="second" #second>Urdu</tab>
+    </tabset>
+    <!-- tab menus End-->
+  </div>
+  <!-- tab menus End-->
+
+  <!-- article -->
+  <div class="mt-5">
+    <h6 class="article-text">Articles</h6>
+    <div class="row d-flex justify-content-center">
+      <div class="row col-md-11">
+        <div class="row rounded bg-theme-grey shadow">
+          <div class="col article-col">
+            <h6>Heading</h6>
+            <p>Content</p>
+            <div>author</div>
+          </div>
+          <div class="col article-col">
+            <h6>Heading</h6>
+            <p>Content</p>
+            <div>author</div>
+          </div>
+          <div class="col article-col">
+            <h6>Heading</h6>
+            <p>Content</p>
+            <div>author</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- article End -->
+  </div>
+</div>
