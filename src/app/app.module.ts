@@ -14,6 +14,9 @@ import { AskFatwasComponent } from './pages/ask-fatwas/ask-fatwas.component';
 import { FatwasComponent } from './pages/fatwas/fatwas.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './layouts/footer/footer.component';
+import { FatwasListComponent } from './pages/fatwas-list/fatwas-list.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { FooterComponent } from './layouts/footer/footer.component';
     AskFatwasComponent,
     FatwasComponent,
     FooterComponent,
+    FatwasListComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

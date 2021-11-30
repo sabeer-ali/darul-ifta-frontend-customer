@@ -39,8 +39,7 @@
 <div class="row mx-0">
   <div class="col-md-3">
     <!-- categories -->
-    <!-- categories End-->
-    <div class="col-md-10 mx-auto side-accord-container shadow">
+    <div class="col-md-9 mx-auto side-accord-container shadow">
       <h6 class="text-white green">Categories</h6>
       <div class="l-green"></div>
       <!-- side  Accordtion-->
@@ -79,7 +78,7 @@
     <!-- categories End-->
 
     <!-- custom details -->
-    <div class="col-md-10 mx-auto custom-details shadow">
+    <div class="col-md-9 mx-auto custom-details shadow">
       <!-- visitor -->
       <div class="custom-details-column">
         <h6>Visitor</h6>
@@ -112,7 +111,7 @@
     <!-- custom details End -->
 
     <!-- portal details -->
-    <div class="col-md-10 mx-auto portal-details mt-5 shadow p-2">
+    <div class="col-md-9 mx-auto portal-details mt-5 shadow p-2">
       <!-- heading -->
       <h6>Join Our Darul Ifta Portel</h6>
       <div class="">
@@ -158,37 +157,41 @@
   <!-- tab menus -->
   <div class="col-md-8 tab-container shadow rounded">
     <tabset #tabset class="pt-4">
-      <tab tab1 heading="English" id="first" #first>English</tab>
-      <tab tab1 heading="മലയാളം" id="first" #first>Malayalam</tab>
+      <tab tab1 heading="English" id="first" #first>
+        <app-fatwas-list></app-fatwas-list>
+      </tab>
+      <tab tab1 heading="മലയാളം" id="first" #first
+        ><app-fatwas-list></app-fatwas-list
+      ></tab>
       <tab tab1 heading="العربيــــــــــــــــــة" id="first" #first
-        >Arabic</tab
-      >
-      <tab tab2 heading="اردو" id="second" #second>Urdu</tab>
+        ><app-fatwas-list></app-fatwas-list
+      ></tab>
+      <tab tab2 heading="اردو" id="second" #second
+        ><app-fatwas-list></app-fatwas-list
+      ></tab>
     </tabset>
     <!-- tab menus End-->
   </div>
   <!-- tab menus End-->
-
-  <!-- article -->
-
-  <div class="mt-5">
-    <h6 class="article-text">Articles</h6>
-    <div class="row d-flex justify-content-center">
-      <div class="row col-md-11 col-sm-12 px-0 mx-0">
-        <div
-          class="row rounded bg-theme-grey shadow px-0 mx-0 article-container"
-        >
+</div>
+<!-- article -->
+<div class="mt-5">
+  <h6 class="article-text">Articles</h6>
+  <div class="row d-flex justify-content-center">
+    <div class="row col-md-11 col-sm-12">
+      <div class="rounded bg-theme-grey shadow article-container">
+        <div class="row mx-auto">
           <div class="col-md-3 article-col">
             <h6>Heading</h6>
             <p>Content</p>
             <div>author</div>
           </div>
-          <div class="col-md-3 article-col px-2 mx-0">
+          <div class="col-md-3 article-col">
             <h6>Heading</h6>
             <p>Content</p>
             <div>author</div>
           </div>
-          <div class="col-md-3 article-col px-2 mx-0">
+          <div class="col-md-3 article-col">
             <h6>Heading</h6>
             <p>Content</p>
             <div>author</div>
@@ -196,8 +199,7 @@
         </div>
       </div>
     </div>
-    <!-- article End -->
   </div>
-  <!-- article End-->
-  <app-footer></app-footer>
+  <!-- article End -->
 </div>
+<!-- article End-->

@@ -1,0 +1,30 @@
+.main-container {
+  padding: 3.58em 0;
+}
+
+.box-wrapper {
+  width: 330px;
+  min-height: 450px;
+  //   background-color: #367887;
+  border-radius: 20px;
+}
+
+.bg-color {
+  //   background-color: #367887;
+}
+.fb-bg-color {
+  background-color: #0356bc;
+}
+
+.box-wrapper div {
+  margin-top: 0.8em;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .main-container {
+  }
+}
+@media only screen and (device-width: 768px) {
+  .main-container {
+  }
+}

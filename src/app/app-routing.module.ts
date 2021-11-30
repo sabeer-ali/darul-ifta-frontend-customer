@@ -1,3 +1,5 @@
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
 import { FatwasComponent } from './pages/fatwas/fatwas.component';
 import { AskFatwasComponent } from './pages/ask-fatwas/ask-fatwas.component';
 import { AboutUsComponent } from './about-us/about-us.component';
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: 'fatwas', component: FatwasComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'contact-us', component: ContactUsComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({

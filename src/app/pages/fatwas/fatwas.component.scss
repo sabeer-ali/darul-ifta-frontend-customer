@@ -1,0 +1,111 @@
+@import "/src/styles.scss";
+.head,
+.desc,
+.arabic-desc {
+  color: $theme-primary-color;
+}
+
+.accordian ::ng-deep .panel-title .btn-link {
+  color: #fff;
+  text-decoration: none;
+}
+.accordian ::ng-deep .card {
+  background-color: transparent;
+}
+
+.side-accord-container {
+  background-color: $theme-primary-color;
+  border-radius: 30px;
+  padding: 1em;
+}
+
+.green {
+  background-color: $theme-green;
+  font-size: $theme-f6;
+  padding: 10px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  margin: 0;
+}
+.l-green {
+  background-color: $theme-l-green;
+  height: 5px;
+}
+
+ul li {
+  color: #fff;
+  list-style-type: none;
+  border-bottom: 1px solid #fff;
+  width: fit-content;
+  padding-bottom: 1px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.custom-details {
+  background-color: #e2e2e2;
+  border-radius: 30px;
+  padding: 2em;
+  margin-top: 3em;
+}
+
+.custom-details-column {
+  border-radius: 15px;
+  background-color: $theme-l-green;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+.custom-details-column h6 {
+  color: $theme-primary-color;
+  font-weight: bolder;
+  font-size: $theme-f2;
+}
+.custom-details-column div {
+  background-color: $theme-primary-color;
+  font-size: $theme-f3;
+}
+
+.portal-details {
+  border: 3px solid $theme-1-grey;
+  border-radius: $theme-br-sm-5;
+}
+
+.portal-btn {
+  background-color: #fff;
+  border-radius: $theme-br-lg-1;
+}
+
+.portal-input {
+  border-top-right-radius: $theme-br-lg-1;
+  border-bottom-right-radius: $theme-br-lg-1;
+}
+
+.portal-details h6 {
+  color: $theme-primary-color;
+  font-weight: bolder;
+  text-align: center;
+  margin: 1em 0;
+}
+.fsize-2 {
+  font-size: $theme-f1;
+}
+
+// tab-container
+.tab-container {
+  background-color: #eeeeeed9;
+}
+.tab-container ::ng-deep .nav-tabs {
+  margin-top: 3em;
+}
+.tab-container ::ng-deep .nav-tabs .active {
+  border-bottom: 2px solid $theme-primary-color;
+}
+.tab-container ::ng-deep .nav-tabs .nav-item .nav-link {
+  color: $theme-green !important;
+  font-weight: bolder;
+  font-size: $theme-f2;
+}
