@@ -1,18 +1,12 @@
 <div class="main-container">
   <div
-    class="
-      d-flex
-      justify-content-center justify-content-lg-end
-      align-items-center
-      px-lg-5
-      mx-lg-5
-    "
+    class="d-flex justify-content-center justify-content-lg-end align-items-center px-lg-5 mx-lg-5"
   >
     <div
       class="box-wrapper p-4 shadow d-flex flex-column justify-content-center"
     >
-      <h5 class="text-center text-white">Login</h5>
-      <div class="input-group flex-nowrap my-3 shadow">
+      <h5 class="text-center">Login</h5>
+      <div class="input-group flex-nowrap mt-3 shadow-sm">
         <span
           class="input-group-text bg-white border-end-0"
           id="addon-wrapping"
@@ -21,54 +15,49 @@
         </span>
         <input
           type="text"
-          class="form-control"
+          class="form-control fs-c-14"
           placeholder="Email id or Mobile number"
           aria-label="Username"
           aria-describedby="addon-wrapping"
         />
       </div>
-      <div class="">
-        <button
-          type="button"
-          class="
-            btn btn-outline-white
-            border
-            shadow-sm
-            d-flex
-            justify-content-center
-            w-100
-            bg-white
-            mb-2
-            shadow
-          "
-        >
-          <img src="/assets/Images/Google__G__Logo.svg" />
-          <span class="ps-3">Continue with Google</span>
-        </button>
-        <button
-          type="button"
-          class="
-            btn btn-outline-white
-            border
-            shadow-sm
-            d-flex
-            justify-content-center
-            w-100
-            fb-bg-color
-            shadow
-            border-0
-          "
-        >
-          <i
-            class="fa fa-facebook-square text-white"
-            aria-hidden="true"
-            style="font-size: x-large"
-          ></i>
-          <span class="ps-3 text-white">Continue with Facebook</span>
-        </button>
+      <div class="d-flex justify-content-center my-2">
+        <span class="fs-c-14">OR</span>
       </div>
-      <div class="row">
-        <div class="col-md-6">
+      <div class="">
+        <div class="border shadow-sm w-auto shadow rounded bg-white cursor">
+          <div class="row py-1">
+            <div class="col-2">
+              <img
+                src="/assets/Images/Google__G__Logo.svg"
+                class="google-img ms-2"
+              />
+            </div>
+            <div class="col-10">
+              <span class="fs-c-14">Continue with Google</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border shadow-sm w-auto shadow rounded bg-white mt-2 cursor"
+        >
+          <div class="row m-0 py-1 fb-bg-color text-white w-100 rounded">
+            <div class="col-1">
+              <i
+                class="fa fa-facebook-square text-white"
+                aria-hidden="true"
+                style="font-size: large"
+              ></i>
+            </div>
+            <div class="col-10 ms-2">
+              <span class="fs-c-14">Continue with Facebook</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-column align-items-center mt-3">
+        <div class="row d-flex justify-content-center align-items-center">
           <div class="list-group-item border-0 p-0 m-0 bg-color">
             <input
               class="form-check-input me-1"
@@ -76,16 +65,20 @@
               value=""
               aria-label="..."
             />
-            <span class=""> Remember me </span>
+            <span class="fs-c-14"> Remember me </span>
           </div>
         </div>
-        <div class="col-md-6">
-          <span class="">Forgot password?</span>
+        <div class="row d-flex justify-content-center align-items-center">
+          <a href="#" class="fs-c-14">Forgot password?</a>
         </div>
       </div>
-      <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-success w-50 fw-bold shadow">
-          Next
+      <div class="d-flex justify-content-center mt-4">
+        <button
+          type="button"
+          class="btn theme-primary-color theme-bg-pc w-50 fw-bold shadow fs-c-14"
+          routerLink="/user-home"
+        >
+          Sign in
         </button>
       </div>
     </div>

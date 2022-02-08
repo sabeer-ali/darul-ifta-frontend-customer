@@ -1,12 +1,12 @@
+@import "/src/styles.scss";
 .main-container {
   padding: 3.58em 0;
 }
 
 .box-wrapper {
-  width: 330px;
-  min-height: 450px;
-  //   background-color: #367887;
-  border-radius: 20px;
+  width: 300px;
+  min-height: 400px;
+  border-radius: 15px;
 }
 
 .bg-color {
@@ -17,14 +17,40 @@
 }
 
 .box-wrapper div {
-  margin-top: 0.8em;
+  // margin-top: 0.8em;
 }
 
 @media only screen and (max-device-width: 480px) {
-  .main-container {
+  .box-wrapper {
+    width: 300px;
   }
 }
 @media only screen and (device-width: 768px) {
   .main-container {
   }
+  .box-wrapper {
+    width: 300px;
+  }
+}
+
+.google-img {
+  width: 20px;
+}
+
+.fb-img {
+  width: 100px;
+  height: 35px;
+}
+
+.theme-bg-pc {
+  background-color: $theme-primary-color;
+  color: #fff;
+}
+
+.fs-c-14 {
+  font-size: $theme-f14;
+}
+
+.cursor {
+  cursor: $theme-pointer;
 }

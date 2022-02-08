@@ -50,16 +50,16 @@ img {
 
 .side-accord-container {
   background-color: $theme-primary-color;
-  border-radius: 30px;
+  border-radius: 20px;
   padding: 1em;
 }
 
 .green {
   background-color: $theme-green;
   font-size: $theme-f6;
-  padding: 10px;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  padding: 0px 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   margin: 0;
 }
 .l-green {
@@ -172,6 +172,18 @@ ul li {
   color: #fff;
 }
 //  End
+
+.accordian-wrapper ::ng-deep .card-header {
+  padding: 0 !important;
+}
+
+.accordian-wrapper ::ng-deep .card-body ul {
+  padding: 0 !important;
+}
+
+.madhab-category ul {
+  padding-left: 1em !important;
+}
 
 @media only screen and (min-width: 960px) {
   /* styles for browsers larger than 960px; */

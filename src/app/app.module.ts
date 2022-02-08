@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,10 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { FatwasListComponent } from './pages/fatwas-list/fatwas-list.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { BsDropdownModule, BsDropdownConfig } from 'ngx-bootstrap/dropdown';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { BasePathInterceptor } from './core/interceptors/base-path.interceptor';
+import { SidebarModule } from './layouts/sidebar/sidebar.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +36,7 @@ import { RegisterComponent } from './pages/register/register.component';
     FatwasListComponent,
     LoginComponent,
     RegisterComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,8 +44,18 @@ import { RegisterComponent } from './pages/register/register.component';
     BrowserAnimationsModule,
     TabsModule.forRoot(),
     AccordionModule.forRoot(),
+    BsDropdownModule,
+    HttpClientModule,
+    SidebarModule,
   ],
-  providers: [],
+  providers: [
+    BsDropdownConfig,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: BasePathInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

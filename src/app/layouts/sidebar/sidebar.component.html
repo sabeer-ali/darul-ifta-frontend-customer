@@ -1,0 +1,36 @@
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <div
+    class="bg-light border-right"
+    id="sidebar-wrapper"
+    [ngClass]="status ? 'hide' : 'show'"
+  >
+    <div class="sidebar-heading">Darul Iftha</div>
+    <div class="list-group list-group-flush">
+      <li *ngFor="let item of menuItems">
+        <a
+          class="list-group-item list-group-item-action"
+          routerLink="{{ item.path }}"
+        >
+          {{ item.title }}
+        </a>
+      </li>
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <!-- <button class="btn btn-primary" (click)="clickEvent()">toggle</button> -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->

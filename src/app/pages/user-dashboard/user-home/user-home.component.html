@@ -1,0 +1,89 @@
+<div class="row justify-content-center">
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats shadow border roundeded">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5 col-md-4 d-flex align-items-center">
+            <div class="icon-big text-center icon-warning">
+              <i class="fa fa-edit fa-3x text-success" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category fs-6 fw-bold">My Fatwas</p>
+              <p class="card-title fs-5 fw-bold">
+                {{ dashboardDetails?.fatwas || 0 | number }}
+              </p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats shadow border roundeded">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5 col-md-4 d-flex align-items-center">
+            <div class="icon-big text-center icon-warning">
+              <i class="fa fa-list-alt fa-3x text-warning"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category fs-6 fw-bold">Fatwas</p>
+              <p class="card-title fs-5 fw-bold">
+                {{ dashboardDetails?.answersFatwas || 0 | number }}
+              </p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats shadow border roundeded">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5 col-md-4 d-flex align-items-center">
+            <div class="icon-big text-center icon-warning">
+              <i class="fa fa-close fa-3x text-danger"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category fs-6 fw-bold">Pendings</p>
+              <p class="card-title fs-5 fw-bold">
+                {{ dashboardDetails?.rejectedFatwas || 0 | number }}
+              </p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Short Question</th>
+        <th scope="col">Madhab</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>S Question</td>
+        <td></td>
+        <td>@mdo</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

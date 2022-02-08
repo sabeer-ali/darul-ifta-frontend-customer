@@ -40,40 +40,35 @@
   <div class="col-md-3">
     <!-- categories -->
     <div class="col-md-9 mx-auto side-accord-container shadow">
-      <h6 class="text-white green">Categories</h6>
+      <div class="green">
+        <span class="text-white fs-5">Categories</span>
+      </div>
       <div class="l-green"></div>
-      <!-- side  Accordtion-->
-      <accordion [isAnimated]="true" class="accordian">
-        <accordion-group heading="Faiths & Beliefs (20">
-          <ul>
-            <li>faith (15)</li>
-            <li>Beliefs (5)</li>
-          </ul>
-        </accordion-group>
-        <accordion-group heading="Prayers & Duties (25)">
-          <ul>
-            <li>Prayers (15)</li>
-            <li>Duties (10)</li>
-          </ul>
-        </accordion-group>
-        <accordion-group heading="Transactions & Dealings (40)">
-          <ul>
-            <li>Transactions (20)</li>
-            <li>Dealings (20)</li>
-          </ul>
-        </accordion-group>
-      </accordion>
-      <!-- side  Accordtion End-->
+      <div class="accordian-wrapper" *ngFor="let item of categoryList">
+        <!-- side  Accordtion-->
+        <accordion [isAnimated]="true" class="accordian">
+          <accordion-group heading="{{ item.title }}">
+            <ul *ngFor="let subCat of item.subCat">
+              <li>{{ subCat?.title }}</li>
+            </ul>
+          </accordion-group>
+        </accordion>
+        <!-- side  Accordtion End-->
+      </div>
 
       <!-- categories 2 -->
-      <h6 class="text-white green mt-5">Madhab</h6>
-      <div class="l-green"></div>
-      <ul class="mt-4">
-        <li>Hanafi Madhab</li>
-        <li>Shafi Madhab</li>
-        <li>Common</li>
-      </ul>
-      <!-- categories 2 End-->
+      <div class="madhab-category">
+        <div class="green mt-5">
+          <span class="text-white fs-5">Madhab</span>
+        </div>
+        <div class="l-green"></div>
+        <ul class="mt-4">
+          <li>Hanafi Madhab</li>
+          <li>Shafi Madhab</li>
+          <li>Common</li>
+        </ul>
+        <!-- categories 2 End-->
+      </div>
     </div>
     <!-- categories End-->
 
@@ -177,7 +172,7 @@
 <!-- article -->
 <div class="mt-5">
   <h6 class="article-text">Articles</h6>
-  <div class="row d-flex justify-content-center">
+  <div class="row d-flex justify-content-center px-0 mx-0">
     <div class="row col-md-11 col-sm-12">
       <div class="rounded bg-theme-grey shadow article-container">
         <div class="row mx-auto">
