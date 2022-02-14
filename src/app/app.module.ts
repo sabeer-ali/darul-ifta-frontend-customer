@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -47,6 +48,8 @@ import { SidebarModule } from './layouts/sidebar/sidebar.module';
     BsDropdownModule,
     HttpClientModule,
     SidebarModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [
     BsDropdownConfig,

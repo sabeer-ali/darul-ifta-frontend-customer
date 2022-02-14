@@ -1,0 +1,92 @@
+<div class="container mt-5">
+  <div>
+    <label for="" class="fw-bold">Status</label>
+    :
+    <span
+      [ngClass]="{
+        'bg-pending': userQuestionDetails?.status?.title === 'Pending'
+      }"
+    >
+      {{ userQuestionDetails?.status?.title }}</span
+    >
+    <hr />
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="exampleInputEmail1" class="form-label">Category</label>
+      <input
+        class="form-control col-md-4"
+        type="text"
+        aria-label=".form-control-sm example"
+        disabled
+        value="{{ userQuestionDetails?.category?.title }}"
+      />
+    </div>
+    <div class="col">
+      <label for="exampleInputEmail1" class="form-label">Madhab</label>
+      <input
+        class="form-control col-md-4"
+        type="text"
+        aria-label=".form-control-sm example"
+        disabled
+        value="{{ userQuestionDetails?.madhab?.title }}"
+      />
+    </div>
+    <div class="col">
+      <label for="exampleInputEmail1" class="form-label">Language</label>
+      <input
+        class="form-control col-md-4"
+        type="text"
+        aria-label=".form-control-sm example"
+        disabled
+        value="{{ userQuestionDetails?.language?.title }}"
+      />
+    </div>
+  </div>
+
+  <div class="my-3">
+    <div class="my-3">
+      <label for="exampleInputEmail1" class="form-label">Short Question</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        value="{{ userQuestionDetails?.short_question }}"
+        disabled
+      />
+    </div>
+
+    <div class="my-3">
+      <label for="exampleInputPassword1" class="form-label"
+        >Long Question</label
+      >
+      <textarea
+        class="form-control"
+        disabled
+        value="{{ userQuestionDetails?.question }}"
+      ></textarea>
+    </div>
+  </div>
+
+  <div *ngIf="userQuestionDetails?.mufti_answered !== 0" class="row">
+    <div class="col">
+      <label for="exampleInputEmail1" class="form-label">Answered By</label>
+      <input
+        type="email"
+        class="form-control"
+        value="{{ userQuestionDetails?.mufti?.name }}"
+        disabled
+      />
+    </div>
+    <div class="col">
+      <label for="exampleInputEmail1" class="form-label">Verified By</label>
+      <input
+        type="email"
+        class="form-control"
+        value="{{ userQuestionDetails?.verifier?.name }}"
+        disabled
+      />
+    </div>
+  </div>
+</div>

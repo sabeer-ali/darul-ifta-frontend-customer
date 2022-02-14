@@ -1,1 +1,82 @@
-<p>ask-fatwas works!</p>
+<div>
+  <form action="" [formGroup]="form">
+    <div class="d-flex justify-content-center">
+      <div class="row col-10">
+        <div class="col-4">
+          <label class="">Madhab</label>
+          <ng-select
+            [items]="madhabList"
+            bindLabel="title"
+            placeholder="Mufthi Name"
+            class="form-group custom-ht col"
+            formControlName="madhab"
+          >
+          </ng-select>
+        </div>
+
+        <div class="col-4">
+          <label class="">Category</label>
+          <ng-select
+            [items]="categoryList"
+            bindLabel="title"
+            placeholder="Category"
+            class="form-group custom-ht col"
+            formControlName="subcategory"
+          >
+          </ng-select>
+        </div>
+
+        <div class="col-4">
+          <label class="">Language</label>
+          <ng-select
+            [items]="languageList"
+            bindLabel="title"
+            placeholder="Category"
+            class="form-group custom-ht col"
+            formControlName="language"
+          >
+          </ng-select>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div class="row col-10 my-3">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Short Question</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            formControlName="short_question"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div class="row col-10">
+        <div class="form-floating">
+          <textarea
+            class="form-control"
+            placeholder="Leave a comment here"
+            id="floatingTextarea2"
+            style="height: 100px"
+            formControlName="question"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="d-flex justify-content-center">
+    <button
+      class="btn btn-success my-5"
+      (click)="handleSubmit()"
+      [disabled]="form.status !== 'VALID'"
+    >
+      Submit Question
+    </button>
+  </div>
+</div>

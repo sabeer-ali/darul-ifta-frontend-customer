@@ -16,24 +16,6 @@ export const ROUTES: RouteInfo[] = [
     class: '',
   },
   {
-    path: '/user-home/user-fatwas',
-    title: 'Fatwas',
-    icon: 'fa fa-table',
-    class: '',
-  },
-  {
-    path: '/user-home/profile',
-    title: 'Profile ',
-    icon: 'fa fa-columns',
-    class: '',
-  },
-  {
-    path: '/user-home/contact-us',
-    title: 'Contact Us',
-    icon: 'fa fa-columns',
-    class: '',
-  },
-  {
     path: '/user-home/profile',
     title: 'Logout',
     icon: 'fa fa-columns',

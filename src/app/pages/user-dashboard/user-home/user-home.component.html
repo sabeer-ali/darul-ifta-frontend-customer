@@ -74,15 +74,26 @@
         <th scope="col">Id</th>
         <th scope="col">Short Question</th>
         <th scope="col">Madhab</th>
-        <th scope="col">Date</th>
+        <th scope="col">Category</th>
+        <th scope="col">Language</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>S Question</td>
-        <td></td>
-        <td>@mdo</td>
+      <tr *ngFor="let item of userQuestionList">
+        <th>{{ item?.id }}</th>
+        <td>{{ item?.short_question }}</td>
+        <td>{{ item?.madhab?.title }}</td>
+        <td>{{ item?.category?.title }}</td>
+        <td>{{ item?.language?.title }}</td>
+        <td>
+          <span
+            class="btn btn-secondary"
+            [routerLink]="['/user-home/question-details', item.id]"
+          >
+            View
+          </span>
+        </td>
       </tr>
     </tbody>
   </table>

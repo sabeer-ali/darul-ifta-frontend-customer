@@ -1,3 +1,4 @@
+@import "/src/styles.scss";
 .position-bottom-right {
   position: absolute;
   bottom: 0;
@@ -80,4 +81,10 @@ hr {
   background-color: #fff;
   height: 1px;
   width: 50%;
+}
+
+.bg-pr,
+ul li {
+  background-color: $theme-primary-color;
+  color: #fff;
 }
