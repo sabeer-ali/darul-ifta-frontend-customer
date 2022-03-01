@@ -23,3 +23,19 @@ $theme-pointer: pointer;
 .bg-theme-grey {
   background-color: $theme-1-grey !important;
 }
+
+.warning-status,
+.success-status,
+.rejected-status {
+  background-color: #ffc107;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.success-status {
+  background-color: #198754;
+}
+.rejected-status {
+  background-color: #dc3545;
+}

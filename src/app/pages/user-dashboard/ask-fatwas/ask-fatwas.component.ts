@@ -44,6 +44,7 @@ export class AskFatwasComponent implements OnInit {
   getlanguageList() {
     this.commonServices.getLanguageList().subscribe((res) => {
       this.languageList = res;
+      console.log('res lan', res);
     });
   }
 

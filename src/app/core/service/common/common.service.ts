@@ -7,6 +7,10 @@ import { HttpClient } from '@angular/common/http';
 export class CommonService {
   constructor(private http: HttpClient) {}
 
+  getGeneralDetails() {
+    return this.http.get('/generals');
+  }
+
   getLanguageList() {
     return this.http.get('/languages');
   }

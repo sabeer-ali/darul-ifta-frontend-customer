@@ -23,6 +23,7 @@ import { BsDropdownModule, BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BasePathInterceptor } from './core/interceptors/base-path.interceptor';
 import { SidebarModule } from './layouts/sidebar/sidebar.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { SidebarModule } from './layouts/sidebar/sidebar.module';
     SidebarModule,
     ReactiveFormsModule,
     FormsModule,
+    SharedModule,
   ],
   providers: [
     BsDropdownConfig,

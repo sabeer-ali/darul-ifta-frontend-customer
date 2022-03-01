@@ -14,6 +14,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { SidebarModule } from 'src/app/layouts/sidebar/sidebar.module';
 import { QuestionDetailsComponent } from './question-details/question-details.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { QuestionDetailsComponent } from './question-details/question-details.co
     NgSelectModule,
     ReactiveFormsModule,
     FormsModule,
+    SharedModule,
   ],
 })
 export class UserDashboardModule {}

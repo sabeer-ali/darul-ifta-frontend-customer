@@ -4,78 +4,80 @@
     <div class="col-md-3">
       <!-- categories -->
       <div class="col-md-9 mx-auto side-accord-container shadow">
-        <h6 class="text-white green">Categories</h6>
+        <div class="green">
+          <span class="text-white fs-5">Categories</span>
+        </div>
         <div class="l-green"></div>
-        <!-- side  Accordtion-->
-        <accordion [isAnimated]="true" class="accordian">
-          <accordion-group heading="Faiths & Beliefs (20">
-            <ul>
-              <li>faith (15)</li>
-              <li>Beliefs (5)</li>
-            </ul>
-          </accordion-group>
-          <accordion-group heading="Prayers & Duties (25)">
-            <ul>
-              <li>Prayers (15)</li>
-              <li>Duties (10)</li>
-            </ul>
-          </accordion-group>
-          <accordion-group heading="Transactions & Dealings (40)">
-            <ul>
-              <li>Transactions (20)</li>
-              <li>Dealings (20)</li>
-            </ul>
-          </accordion-group>
-        </accordion>
-        <!-- side  Accordtion End-->
+        <div *ngIf="categoryList.length; else noDataAvailable">
+          <div class="accordian-wrapper" *ngFor="let item of categoryList">
+            <!-- side  Accordtion-->
+            <accordion [isAnimated]="true" class="accordian">
+              <accordion-group heading="{{ item.title }}">
+                <ul *ngFor="let subCat of item.subCat">
+                  <li (click)="onSelectTab(subCat, 'cat')">
+                    {{ subCat?.title }}
+                  </li>
+                </ul>
+              </accordion-group>
+            </accordion>
+            <!-- side  Accordtion End-->
+          </div>
+        </div>
 
         <!-- categories 2 -->
-        <h6 class="text-white green mt-5">Madhab</h6>
-        <div class="l-green"></div>
-        <ul class="mt-4">
-          <li>Hanafi Madhab</li>
-          <li>Shafi Madhab</li>
-          <li>Common</li>
-        </ul>
-        <!-- categories 2 End-->
+        <div class="madhab-category">
+          <div class="green mt-4">
+            <span class="text-white fs-5">Madhab</span>
+          </div>
+          <div class="l-green"></div>
+          <div *ngIf="madhabList.length; else noDataAvailable">
+            <ul class="mt-2" *ngFor="let item of madhabList">
+              <li (click)="onSelectTab(item, 'mad')">{{ item?.title }}</li>
+            </ul>
+          </div>
+          <!-- categories 2 End-->
+        </div>
       </div>
       <!-- categories End-->
 
       <!-- custom details -->
-      <div class="col-md-9 mx-auto custom-details shadow">
+      <div class="col-md-9 mx-auto custom-details shadow" *ngIf="isHome">
         <!-- visitor -->
         <div class="custom-details-column">
           <h6>Visitor</h6>
-          <div>14332</div>
+          <div>{{ generalDetails?.visitors || 0 | number }}</div>
         </div>
         <!-- visitor End -->
 
         <!-- visitor -->
         <div class="custom-details-column">
           <h6>Total Fatwas</h6>
-          <div>14332</div>
+          <div>{{ generalDetails?.fatwas || 0 | number }}</div>
         </div>
 
         <!-- visitor End -->
         <!-- visitor -->
         <div class="custom-details-column">
           <h6>Registered Users</h6>
-          <div>14332</div>
+          <div>{{ generalDetails?.regUsers || 0 | number }}</div>
         </div>
 
         <!-- visitor End -->
         <!-- visitor -->
-        <div class="custom-details-column">
+        <!-- <div class="custom-details-column">
           <h6>Last Updated</h6>
           <div>14332</div>
-        </div>
+        </div> -->
 
         <!-- visitor End -->
       </div>
       <!-- custom details End -->
 
       <!-- portal details -->
-      <div class="col-md-9 mx-auto portal-details mt-5 shadow p-2">
+      <div
+        class="col-md-9 mx-auto portal-details mt-5 shadow p-2"
+        *ngIf="isHome"
+      >
         <!-- heading -->
         <h6>Join Our Darul Ifta Portel</h6>
         <div class="">
@@ -121,17 +123,50 @@
     <!-- tab menus -->
     <div class="col-md-8 tab-container shadow rounded">
       <tabset #tabset class="pt-4">
-        <tab tab1 heading="English" id="first" #first>
-          <app-fatwas-list></app-fatwas-list>
+        <tab
+          tab1
+          heading="മലയാളം"
+          id="1"
+          #malayalam="tab"
+          (selectTab)="onSelectTab($event, 'tab')"
+          ><app-fatwas-list
+            *ngIf="malayalam.active"
+            [questions]="questionsList"
+          ></app-fatwas-list
+        ></tab>
+        <tab
+          tab2
+          heading="English"
+          id="2"
+          #english="tab"
+          (selectTab)="onSelectTab($event, 'tab')"
+        >
+          <app-fatwas-list
+            *ngIf="english.active"
+            [questions]="questionsList"
+          ></app-fatwas-list>
         </tab>
-        <tab tab1 heading="മലയാളം" id="first" #first
-          ><app-fatwas-list></app-fatwas-list
+        <tab
+          tab3
+          heading="اردو"
+          id="3"
+          #urdu="tab"
+          (selectTab)="onSelectTab($event, 'tab')"
+          ><app-fatwas-list
+            *ngIf="urdu.active"
+            [questions]="questionsList"
+          ></app-fatwas-list
         ></tab>
-        <tab tab1 heading="العربيــــــــــــــــــة" id="first" #first
-          ><app-fatwas-list></app-fatwas-list
-        ></tab>
-        <tab tab2 heading="اردو" id="second" #second
-          ><app-fatwas-list></app-fatwas-list
+        <tab
+          tab4
+          heading="العربيــــــــــــــــــة"
+          id="4"
+          #arabic="tab"
+          (selectTab)="onSelectTab($event, 'tab')"
+          ><app-fatwas-list
+            *ngIf="arabic.active"
+            [questions]="questionsList"
+          ></app-fatwas-list
         ></tab>
       </tabset>
       <!-- tab menus End-->
@@ -139,3 +174,7 @@
     <!-- tab menus End-->
   </div>
 </div>
+
+<ng-template #noDataAvailable>
+  <div class="text-light ps-3 pt-2">No Data Available</div>
+</ng-template>

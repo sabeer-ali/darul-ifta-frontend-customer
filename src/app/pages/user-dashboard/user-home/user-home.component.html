@@ -1,18 +1,18 @@
 <div class="row justify-content-center">
-  <div class="col-lg-3 col-md-6 col-sm-6">
+  <div class="col-lg-3 col-md-3 col-sm-3">
     <div class="card card-stats shadow border roundeded">
       <div class="card-body">
         <div class="row">
           <div class="col-5 col-md-4 d-flex align-items-center">
-            <div class="icon-big text-center icon-warning">
-              <i class="fa fa-edit fa-3x text-success" aria-hidden="true"></i>
+            <div class="icon-big text-center">
+              <i class="fa fa-list-alt fa-3x" aria-hidden="true"></i>
             </div>
           </div>
           <div class="col-7 col-md-8">
             <div class="numbers">
-              <p class="card-category fs-6 fw-bold">My Fatwas</p>
+              <p class="card-category fs-6 fw-bold">Total Fatwas</p>
               <p class="card-title fs-5 fw-bold">
-                {{ dashboardDetails?.fatwas || 0 | number }}
+                {{ dashboardDetails?.total || 0 | number }}
               </p>
               <p></p>
             </div>
@@ -21,20 +21,20 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-3 col-md-6 col-sm-6">
+  <div class="col-lg-3 col-md-3 col-sm-3">
     <div class="card card-stats shadow border roundeded">
       <div class="card-body">
         <div class="row">
           <div class="col-5 col-md-4 d-flex align-items-center">
-            <div class="icon-big text-center icon-warning">
-              <i class="fa fa-list-alt fa-3x text-warning"></i>
+            <div class="icon-big text-center">
+              <i class="fa fa-edit fa-3x text-success"></i>
             </div>
           </div>
           <div class="col-7 col-md-8">
             <div class="numbers">
-              <p class="card-category fs-6 fw-bold">Fatwas</p>
+              <p class="card-category fs-6 fw-bold">Answered</p>
               <p class="card-title fs-5 fw-bold">
-                {{ dashboardDetails?.answersFatwas || 0 | number }}
+                {{ dashboardDetails?.answered || 0 | number }}
               </p>
               <p></p>
             </div>
@@ -43,7 +43,29 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-3 col-md-6 col-sm-6">
+  <div class="col-lg-3 col-md-3 col-sm-3">
+    <div class="card card-stats shadow border roundeded">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5 col-md-4 d-flex align-items-center">
+            <div class="icon-big text-center text-warning">
+              <i class="fa fa-clock-o fa-3x icon-warning"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category fs-6 fw-bold">Pendings</p>
+              <p class="card-title fs-5 fw-bold">
+                {{ dashboardDetails?.pending || 0 | number }}
+              </p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-3">
     <div class="card card-stats shadow border roundeded">
       <div class="card-body">
         <div class="row">
@@ -54,9 +76,9 @@
           </div>
           <div class="col-7 col-md-8">
             <div class="numbers">
-              <p class="card-category fs-6 fw-bold">Pendings</p>
+              <p class="card-category fs-6 fw-bold">Rejected</p>
               <p class="card-title fs-5 fw-bold">
-                {{ dashboardDetails?.rejectedFatwas || 0 | number }}
+                {{ dashboardDetails?.rejected || 0 | number }}
               </p>
               <p></p>
             </div>
@@ -66,8 +88,8 @@
     </div>
   </div>
 </div>
-
-<div>
+<div class="my-4">
+  <hr />
   <table class="table">
     <thead>
       <tr>
@@ -75,20 +97,28 @@
         <th scope="col">Short Question</th>
         <th scope="col">Madhab</th>
         <th scope="col">Category</th>
+        <th scope="col">Status</th>
         <th scope="col">Language</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>
-    <tbody>
+
+    <tbody *ngIf="userQuestionList.length; else noDataAvailable">
       <tr *ngFor="let item of userQuestionList">
-        <th>{{ item?.id }}</th>
+        <td>{{ item?.id }}</td>
         <td>{{ item?.short_question }}</td>
         <td>{{ item?.madhab?.title }}</td>
-        <td>{{ item?.category?.title }}</td>
+        <td>{{ item?.sub_category?.title }}</td>
+        <td>
+          <span [ngClass]="{ 'warning-status': item?.status.id === 1 }">
+            {{ item?.status?.title }}
+          </span>
+        </td>
+
         <td>{{ item?.language?.title }}</td>
         <td>
           <span
-            class="btn btn-secondary"
+            class="btn btn-primary btn-sm"
             [routerLink]="['/user-home/question-details', item.id]"
           >
             View
@@ -97,4 +127,11 @@
       </tr>
     </tbody>
   </table>
+  <ng-template #noDataAvailable>
+    <tr>
+      <td colspan="7">
+        <app-no-data-available></app-no-data-available>
+      </td>
+    </tr>
+  </ng-template>
 </div>

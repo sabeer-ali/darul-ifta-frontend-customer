@@ -1,24 +1,42 @@
-<div>
-  <div class="fatwal-list-wrapper shadow my-4" *ngFor="let item of data">
+<div *ngIf="questionsList?.length; else noDataAvailable">
+  <div
+    class="fatwal-list-wrapper shadow-sm my-4"
+    *ngFor="let item of questionsList"
+  >
     <div class="short-q">
-      <h5>{{ item.shortQ }}</h5>
+      <h5>{{ item?.short_question }}</h5>
     </div>
     <div class="long-q">
-      <h6>{{ item.longQ }}</h6>
+      <h6>{{ item?.question }}</h6>
     </div>
     <div class="row author-details px-0 mx-0">
       <div class="col-md-1">
-        <h6>{{ item.qid }}</h6>
-      </div>
-      <div class="col-md-5">
-        <h6>Written By : mufthi name</h6>
+        <h6>
+          Q{{
+            item.id < 100
+              ? "00" + item.id
+              : item.id > 100 && item.id < 1000
+              ? "0" + item.id
+              : item.id
+          }}
+        </h6>
       </div>
       <div class="col-md-3">
-        <h6>Date : 10-10-2021</h6>
+        <h6>Written By : {{ item?.mufti || "N.A" }}</h6>
       </div>
       <div class="col-md-3">
-        <h6>Views : 100</h6>
+        <h6>Verified By : {{ item?.verifier || "N.A" }}</h6>
+      </div>
+      <div class="col-md-3">
+        <h6>Date : {{ item?.createdAt | date: "dd-MM-yyyy" }}</h6>
+      </div>
+      <div class="col-md-2">
+        <h6>Views : {{ item?.viewCount || 0 }}</h6>
       </div>
     </div>
   </div>
 </div>
+
+<ng-template #noDataAvailable>
+  <app-no-data-available></app-no-data-available>
+</ng-template>

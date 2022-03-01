@@ -44,6 +44,7 @@ img {
   color: #fff;
   text-decoration: none;
 }
+
 .accordian ::ng-deep .card {
   background-color: transparent;
 }
@@ -52,6 +53,10 @@ img {
   background-color: $theme-primary-color;
   border-radius: 20px;
   padding: 1em;
+}
+
+.accordian ::ng-deep .panel-title .btn:focus {
+  box-shadow: none !important;
 }
 
 .green {
@@ -71,10 +76,10 @@ ul li {
   color: #fff;
   list-style-type: none;
   border-bottom: 1px solid #fff;
-  width: fit-content;
   padding-bottom: 1px;
   margin-bottom: 10px;
   cursor: pointer;
+  width: auto;
 }
 
 .custom-details {
@@ -182,7 +187,7 @@ ul li {
 }
 
 .madhab-category ul {
-  padding-left: 1em !important;
+  padding-left: 0.2em !important;
 }
 
 @media only screen and (min-width: 960px) {
