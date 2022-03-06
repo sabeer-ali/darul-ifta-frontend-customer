@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactUsComponent } from 'src/app/contact-us/contact-us.component';
+import { FatwaAnswerComponent } from '../fatwa-answer/fatwa-answer.component';
 
 import { ProfileComponent } from '../profile/profile.component';
 import { AskFatwasComponent } from './ask-fatwas/ask-fatwas.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'ask-fatwas', component: AskFatwasComponent },
   { path: 'user-fatwas', component: FatwasComponent },
   { path: 'question-details/:id', component: QuestionDetailsComponent },
+
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 

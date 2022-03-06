@@ -4,7 +4,9 @@
     *ngFor="let item of questionsList"
   >
     <div class="short-q">
-      <h5>{{ item?.short_question }}</h5>
+      <h5 [routerLink]="['/answer-details', item.id]">
+        {{ item?.short_question + "11111" }}
+      </h5>
     </div>
     <div class="long-q">
       <h6>{{ item?.question }}</h6>
@@ -22,10 +24,10 @@
         </h6>
       </div>
       <div class="col-md-3">
-        <h6>Written By : {{ item?.mufti || "N.A" }}</h6>
+        <h6>Written By : {{ item?.mufti?.name || "N.A" }}</h6>
       </div>
       <div class="col-md-3">
-        <h6>Verified By : {{ item?.verifier || "N.A" }}</h6>
+        <h6>Verified By : {{ item?.verifier?.name || "N.A" }}</h6>
       </div>
       <div class="col-md-3">
         <h6>Date : {{ item?.createdAt | date: "dd-MM-yyyy" }}</h6>

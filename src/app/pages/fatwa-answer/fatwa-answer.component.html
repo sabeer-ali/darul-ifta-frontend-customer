@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="row">
+    <div>
+      <span class="fw-bolder">Question ID : </span
+      >{{ answerDetails?.question_id }}
+    </div>
+
+    <div>
+      <span class="fw-bolder">Madhab :</span>
+      {{ questionDetails?.madhab?.title }}
+    </div>
+    <div>
+      <span class="fw-bolder">Category :</span>
+      {{ questionDetails?.category?.title }}
+    </div>
+  </div>
+  <hr />
+
+  <div class="row">
+    <div class="my-3">
+      <span class="fw-bolder"> Title : </span>
+
+      {{ questionDetails?.short_question }}
+    </div>
+    <div class="my-2">
+      <p class="">
+        <span class="fw-bolder"> Question : </span>
+        {{ questionDetails?.question }}
+      </p>
+    </div>
+    <div class="my-2">
+      <span class="fw-bolder"> Answer : </span>
+
+      {{ answerDetails?.answer }}
+    </div>
+  </div>
+
+  <div class="">
+    <div class="row mx-auto rounded p-3 mt-4 shadow-sm">
+      <div class="col">
+        <span class="fw-bolder"> Written by : </span>
+        {{ answerDetails?.answered_by?.name }}
+      </div>
+
+      <div class="col">
+        <span class="fw-bolder"> Verified by : </span>
+        {{ answerDetails?.verified_by?.name || "N.A" }}
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <div>
+    <div>
+      <span class="fw-bolder"> Quote : </span>
+      {{ answerDetails?.reference?.quotes }}
+    </div>
+    <div>
+      <span class="fw-bolder">Book Name : </span>
+      {{ answerDetails?.reference?.bookName }}
+    </div>
+
+    <div>
+      <span class="fw-bolder">Book Volume : </span>
+      {{ answerDetails?.reference?.vol }}
+    </div>
+    <div>
+      <span class="fw-bolder">Book Page Number : </span>
+
+      {{ answerDetails?.reference?.pgNo }}
+    </div>
+  </div>
+</div>

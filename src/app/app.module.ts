@@ -24,6 +24,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { BasePathInterceptor } from './core/interceptors/base-path.interceptor';
 import { SidebarModule } from './layouts/sidebar/sidebar.module';
 import { SharedModule } from './shared/shared.module';
+import { FatwaAnswerComponent } from './pages/fatwa-answer/fatwa-answer.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { SharedModule } from './shared/shared.module';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
+    FatwaAnswerComponent,
   ],
   imports: [
     BrowserModule,
