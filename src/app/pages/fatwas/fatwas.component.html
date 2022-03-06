@@ -5,7 +5,7 @@
       <!-- categories -->
       <div class="col-md-9 side-accord-container shadow">
         <div class="green">
-          <span class="text-white fs-5">Categories</span>
+          <span class="text-white fs-6">Categories</span>
         </div>
         <div class="l-green"></div>
         <div *ngIf="categoryList.length; else noDataAvailable">
@@ -27,7 +27,7 @@
         <!-- categories 2 -->
         <div class="madhab-category">
           <div class="green mt-4">
-            <span class="text-white fs-5">Madhab</span>
+            <span class="text-white fs-6">Madhab</span>
           </div>
           <div class="l-green"></div>
           <div *ngIf="madhabList.length; else noDataAvailable">
@@ -41,7 +41,7 @@
       <!-- categories End-->
 
       <!-- custom details -->
-      <div class="col-md-9 mx-auto custom-details shadow" *ngIf="isHome">
+      <div class="col-md-9 custom-details shadow" *ngIf="isHome">
         <!-- visitor -->
         <div class="custom-details-column">
           <h6>Visitor</h6>
@@ -74,10 +74,7 @@
       <!-- custom details End -->
 
       <!-- portal details -->
-      <div
-        class="col-md-9 mx-auto portal-details mt-5 shadow p-2"
-        *ngIf="isHome"
-      >
+      <div class="col-md-9 portal-details mt-5 shadow p-2" *ngIf="isHome">
         <!-- heading -->
         <h6>Join Our Darul Ifta Portel</h6>
         <div class="">
@@ -122,7 +119,7 @@
 
     <!-- tab menus -->
     <div class="col-md-8 tab-container shadow rounded">
-      <tabset #tabset class="pt-4">
+      <tabset #tabset class="">
         <tab
           tab1
           heading="മലയാളം"

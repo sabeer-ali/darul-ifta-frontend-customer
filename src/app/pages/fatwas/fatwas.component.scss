@@ -21,8 +21,8 @@
 
 .green {
   background-color: $theme-green;
-  font-size: $theme-f6;
-  padding: 10px;
+  font-size: small;
+  padding: 5px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   margin: 0;
@@ -40,6 +40,8 @@ ul li {
   padding-bottom: 1px;
   margin-bottom: 10px;
   cursor: pointer;
+  font-size: medium;
+  font-family: "Marcellus" serif;
 }
 
 .custom-details {
@@ -99,7 +101,7 @@ ul li {
   background-color: #eeeeeed9;
 }
 .tab-container ::ng-deep .nav-tabs {
-  margin-top: 3em;
+  margin-top: 1.5em;
 }
 .tab-container ::ng-deep .nav-tabs .active {
   border-bottom: 2px solid $theme-primary-color;
@@ -108,4 +110,7 @@ ul li {
   color: $theme-green !important;
   font-weight: bolder;
   font-size: $theme-f2;
+}
+.accordian-wrapper ul {
+  padding-left: 1em !important;
 }
