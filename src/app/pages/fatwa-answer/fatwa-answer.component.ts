@@ -29,15 +29,16 @@ export class FatwaAnswerComponent implements OnInit {
     this.answerService.getAnswers(id).subscribe((res) => {
       this.answerDetails = res;
       this.answerDetails = this.answerDetails[0];
-      console.log('Answer Details ', this.answerDetails);
 
-      let params = `?id=${this.answerDetails.question_id}`;
-      this.questionService.getQuestionItem(params).subscribe((rez) => {
-        this.questionDetails = rez;
-        this.questionDetails = this.questionDetails[0];
+      if (this.answerDetails) this.getQuestionsDetails();
+    });
+  }
 
-        console.log('this.questionDetails', this.questionDetails);
-      });
+  getQuestionsDetails() {
+    let params = `?id=${this.answerDetails?.question_id}`;
+    this.questionService.getQuestionItem(params).subscribe((rez) => {
+      this.questionDetails = rez;
+      this.questionDetails = this.questionDetails[0];
     });
   }
 }
