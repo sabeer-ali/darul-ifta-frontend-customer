@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container bg-white rounded shadow-sm p-4">
   <div class="row">
     <div>
       <span class="fw-bolder">Question ID : </span
@@ -18,25 +18,27 @@
 
   <div class="row">
     <div class="my-3">
-      <span class="fw-bolder"> Title : </span>
+      <span class="fw-bolder fs-6"> Title : </span>
+      <br />
 
       {{ questionDetails?.short_question }}
     </div>
     <div class="my-2">
       <p class="">
-        <span class="fw-bolder"> Question : </span>
+        <span class="fw-bolder fs-6"> Question : </span>
+        <br />
         {{ questionDetails?.question }}
       </p>
     </div>
     <div class="my-2">
-      <span class="fw-bolder"> Answer : </span>
+      <span class="fw-bolder fs-6"> Answer : </span> <br />
 
       {{ answerDetails?.answer }}
     </div>
   </div>
 
   <div class="">
-    <div class="row mx-auto rounded p-3 mt-4 shadow-sm">
+    <div class="row mx-auto rounded mt-4">
       <div class="col">
         <span class="fw-bolder"> Written by : </span>
         {{ answerDetails?.answered_by?.name }}
@@ -51,24 +53,24 @@
 
   <hr />
 
-  <div>
-    <div>
-      <span class="fw-bolder"> Quote : </span>
-      {{ answerDetails?.reference?.quotes }}
-    </div>
-    <div>
-      <span class="fw-bolder">Book Name : </span>
-      {{ answerDetails?.reference?.bookName }}
-    </div>
-
-    <div>
-      <span class="fw-bolder">Book Volume : </span>
-      {{ answerDetails?.reference?.vol }}
-    </div>
-    <div>
-      <span class="fw-bolder">Book Page Number : </span>
-
-      {{ answerDetails?.reference?.pgNo }}
+  <div class="pb-5 mb-5">
+    <div class="drtl">
+      <span class="drtl" *ngIf="answerDetails?.reference?.pgNo">
+        <span class="fw-bolder">/ </span>
+        {{ answerDetails?.reference?.pgNo }}
+      </span>
+      <span class="drtl" *ngIf="answerDetails?.reference?.vol">
+        <span class="fw-bolder">/ </span>
+        {{ answerDetails?.reference?.vol }}
+      </span>
+      <span class="drtl" *ngIf="answerDetails?.reference?.bookName">
+        <span class="fw-bolder">/ </span>
+        {{ answerDetails?.reference?.bookName }}
+      </span>
+      <span class="drtl" *ngIf="answerDetails?.reference?.quotes">
+        <span class="fw-bolder"> / </span>
+        {{ answerDetails?.reference?.quotes }}
+      </span>
     </div>
   </div>
 </div>

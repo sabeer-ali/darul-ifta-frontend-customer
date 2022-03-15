@@ -1,6 +1,6 @@
 <div *ngIf="questionsList?.length; else noDataAvailable">
   <div
-    class="fatwal-list-wrapper shadow-sm my-4"
+    class="fatwal-list-wrapper shadow-sm my-4 mb-2"
     *ngFor="let item of questionsList"
   >
     <div class="short-q">
@@ -24,11 +24,11 @@
         </h6>
       </div>
       <div class="col-md-3">
-        <h6>Written By : {{ item?.mufti?.name || "N.A" }}</h6>
+        <h6>W By : {{ item?.mufti?.display_title || "N.A" }}</h6>
       </div>
-      <div class="col-md-3">
+      <!-- <div class="col-md-3">
         <h6>Verified By : {{ item?.verifier?.name || "N.A" }}</h6>
-      </div>
+      </div> -->
       <div class="col-md-3">
         <h6>Date : {{ item?.createdAt | date: "dd-MM-yyyy" }}</h6>
       </div>

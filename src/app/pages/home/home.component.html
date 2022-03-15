@@ -1,37 +1,80 @@
-<div class="">
+<div class="bg-custom">
   <!-- slider -->
   <div class="d-flex justify-content-center container">
-    <div class="row col-md-12">
-      <div class="col-md-9 d-flex flex-column justify-content-center">
-        <div class="max-width">
-          <h2 class="my-2 head">Darul Ifta Kauzariyya</h2>
-          <h6 class="my-4 desc">
-            A site for online fatwas (Islamic queries) running under the
-            supervision of Al Jamiathul Kauzariyya Fatwa board to guide humanity
-            to authentic rulings of Islam.
-          </h6>
-          <h5 class="my-4 arabic-desc">
-            فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ
-          </h5>
+    <carousel
+      [isAnimated]="true"
+      [interval]="8000"
+      [pauseOnFocus]="false"
+      [noPause]="true"
+    >
+      <slide>
+        <div class="row col-md-12">
+          <div class="col-md-9 d-flex flex-column justify-content-center">
+            <div class="max-width">
+              <h2 class="my-2 head">Darul Ifta Kauzariyya</h2>
+              <h6 class="my-4 desc">
+                A site for online fatwas (Islamic queries) running under the
+                supervision of Al Jamiathul Kauzariyya Fatwa board to guide
+                humanity to authentic rulings of Islam.
+              </h6>
+              <h5 class="my-4 arabic-desc">
+                فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ
+              </h5>
 
-          <div class="btn-wrapper d-flex">
-            <span class="custom-question-icon">
-              <i class="fa fa-question" aria-hidden="true"></i>
-            </span>
-            <span class="d-flex align-items-center">
-              <span class="custom-btn"> Ask Question </span>
-            </span>
+              <div class="btn-wrapper d-flex">
+                <span class="custom-question-icon">
+                  <i class="fa fa-question" aria-hidden="true"></i>
+                </span>
+                <span class="d-flex align-items-center">
+                  <span class="custom-btn"> Ask Question </span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <img
+              src="../../../assets/Images/ifta-logo.svg"
+              class="img-thumbnails"
+              alt=""
+            />
           </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <img
-          src="../../../assets/Images/ifta-logo.svg"
-          class="img-thumbnails"
-          alt=""
-        />
-      </div>
-    </div>
+      </slide>
+      <slide>
+        <div class="row col-md-12">
+          <div class="col-md-9 d-flex flex-column justify-content-center">
+            <div class="max-width">
+              <h2 class="my-2 head">Darul Ifta Kauzariyya</h2>
+              <h6 class="my-4 desc">
+                A site for online fatwas (Islamic queries) running under the
+                supervision of Al Jamiathul Kauzariyya Fatwa board to guide
+                humanity to authentic rulings of Islam.
+              </h6>
+              <h5 class="my-4 arabic-desc">
+                فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ
+              </h5>
+
+              <div class="btn-wrapper d-flex">
+                <span class="custom-question-icon">
+                  <i class="fa fa-question" aria-hidden="true"></i>
+                </span>
+                <span class="d-flex align-items-center">
+                  <span class="custom-btn"> Ask Question </span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <img
+              src="assets/Images/Minaret.svg"
+              class="img-thumbnails"
+              alt=""
+              style="height: 400px"
+            />
+          </div>
+        </div>
+      </slide>
+    </carousel>
   </div>
   <!-- slider End-->
   <!-- side menus -->

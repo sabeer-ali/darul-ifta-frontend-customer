@@ -74,3 +74,7 @@ $theme-pointer: pointer;
   src: local("Jameela"),
     url(./assets/fonts/urdu/JameelNooriNastaleeqRegular.ttf) format("truetype");
 }
+
+.text-right {
+  text-align: right !important;
+}

@@ -19,12 +19,18 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { FatwasListComponent } from './pages/fatwas-list/fatwas-list.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { BsDropdownModule, BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BasePathInterceptor } from './core/interceptors/base-path.interceptor';
 import { SidebarModule } from './layouts/sidebar/sidebar.module';
 import { SharedModule } from './shared/shared.module';
 import { FatwaAnswerComponent } from './pages/fatwa-answer/fatwa-answer.component';
+
+import { BsDropdownModule, BsDropdownConfig } from 'ngx-bootstrap/dropdown';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { Title } from '@angular/platform-browser';
+import { RulesRegulationsComponent } from './pages/rules-regulations/rules-regulations.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditions.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +47,9 @@ import { FatwaAnswerComponent } from './pages/fatwa-answer/fatwa-answer.componen
     RegisterComponent,
     ProfileComponent,
     FatwaAnswerComponent,
+    RulesRegulationsComponent,
+    PrivacyPolicyComponent,
+    TermsConditionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +63,7 @@ import { FatwaAnswerComponent } from './pages/fatwa-answer/fatwa-answer.componen
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
+    CarouselModule,
   ],
   providers: [
     BsDropdownConfig,
@@ -62,6 +72,7 @@ import { FatwaAnswerComponent } from './pages/fatwa-answer/fatwa-answer.componen
       useClass: BasePathInterceptor,
       multi: true,
     },
+    Title,
   ],
   bootstrap: [AppComponent],
 })

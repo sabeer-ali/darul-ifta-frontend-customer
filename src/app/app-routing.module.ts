@@ -12,16 +12,28 @@ import { HomeComponent } from './pages/home/home.component';
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard/user-dashboard.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { FatwaAnswerComponent } from './pages/fatwa-answer/fatwa-answer.component';
+import { RulesRegulationsComponent } from './pages/rules-regulations/rules-regulations.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditions.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'ask-fatwas', component: AskFatwasComponent },
+  { path: '', component: HomeComponent, data: { title: 'Home' } },
+  {
+    path: 'ask-fatwas',
+    component: AskFatwasComponent,
+    data: { title: 'Ask Fatwas' },
+  },
   { path: 'fatwas', component: FatwasComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'contact-us', component: ContactUsComponent },
+  { path: 'rules-regulations', component: RulesRegulationsComponent },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
+  { path: 'terms-conditions', component: TermsConditionsComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: 'answer-details/:id', component: FatwaAnswerComponent },
   {
@@ -38,7 +50,7 @@ const routes: Routes = [
       },
     ],
   },
-  // { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
+  { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
 ];
 
 @NgModule({

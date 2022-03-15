@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { QuestionService } from 'src/app/core/service/question/question.service';
 
 @Component({
@@ -7,13 +8,17 @@ import { QuestionService } from 'src/app/core/service/question/question.service'
   styleUrls: ['./user-home.component.scss'],
 })
 export class UserHomeComponent implements OnInit {
-  constructor(private questionService: QuestionService) {}
+  constructor(
+    private questionService: QuestionService,
+    private titlePage: Title
+  ) {}
 
   dashboardDetails: any = [];
 
   userQuestionList: any = [];
 
   ngOnInit(): void {
+    this.titlePage.setTitle('User home');
     this.getQuestionList();
     this.getCounts();
   }

@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container" [ngClass]="{ 'my-5': !isHome }">
   <!-- side menus -->
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
       <!-- categories -->
-      <div class="col-md-9 side-accord-container shadow">
+      <div class="col side-accord-container shadow">
         <div class="green">
           <span class="text-white fs-6">Categories</span>
         </div>
@@ -41,7 +41,7 @@
       <!-- categories End-->
 
       <!-- custom details -->
-      <div class="col-md-9 custom-details shadow" *ngIf="isHome">
+      <div class="col custom-details shadow" *ngIf="isHome">
         <!-- visitor -->
         <div class="custom-details-column">
           <h6>Visitor</h6>
@@ -118,8 +118,19 @@
     <!-- side menus End -->
 
     <!-- tab menus -->
-    <div class="col-md-8 tab-container shadow rounded">
+    <div class="col-md-9 tab-container shadow rounded">
       <tabset #tabset class="">
+        <tab
+          tab1
+          heading="All"
+          id="0"
+          #all="tab"
+          (selectTab)="onSelectTab($event, 'tab')"
+          ><app-fatwas-list
+            *ngIf="all.active"
+            [questions]="questionsList"
+          ></app-fatwas-list
+        ></tab>
         <tab
           tab1
           heading="മലയാളം"

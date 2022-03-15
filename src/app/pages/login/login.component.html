@@ -2,77 +2,74 @@
   <div
     class="d-flex justify-content-center justify-content-lg-end align-items-center px-lg-5 mx-lg-5"
   >
-    <div
-      class="box-wrapper p-4 shadow d-flex flex-column justify-content-center"
-    >
-      <h5 class="text-center">Login</h5>
-      <div class="input-group flex-nowrap mt-3 shadow-sm">
-        <span
-          class="input-group-text bg-white border-end-0"
-          id="addon-wrapping"
-        >
-          <i class="fa fa-user" aria-hidden="true"></i>
-        </span>
+    <div class="box-wrapper p-4 shadow d-flex flex-column">
+      <div class="my-4">
+        <h3 class="">Sign in</h3>
+      </div>
+
+      <div class="input-group flex-nowrap mt-3">
         <input
           type="text"
-          class="form-control fs-c-14"
-          placeholder="Email id or Mobile number"
+          class="fs-c-14 w-100"
+          placeholder="Email or Phone number"
           aria-label="Username"
           aria-describedby="addon-wrapping"
         />
       </div>
-      <div class="d-flex justify-content-center my-2">
-        <span class="fs-c-14">OR</span>
+      <div class="row my-5">
+        <div class="col">
+          <a href="#" class="">Forgot password?</a>
+        </div>
+        <div class="col text-right">
+          <button
+            class="btn btn-sm btn-primary rounded-pill px-3"
+            routerLink="/user-home"
+          >
+            Continue
+          </button>
+        </div>
       </div>
-      <div class="">
-        <div class="border shadow-sm w-auto shadow rounded bg-white cursor">
-          <div class="row py-1">
-            <div class="col-2">
+      <div class="RuleWithText mt-4 mb-3">
+        <span class="fs-c-14"> Or </span>
+      </div>
+      <div class="social-media-wrapper">
+        <div
+          class="border shadow-sm w-auto shadow rounded-pill bg-white cursor p-2"
+        >
+          <div class="row py-1 d-flex justify-content-center">
+            <div class="col-auto">
               <img
                 src="/assets/Images/Google__G__Logo.svg"
                 class="google-img ms-2"
               />
             </div>
-            <div class="col-10">
+            <div class="col-auto">
               <span class="fs-c-14">Continue with Google</span>
             </div>
           </div>
         </div>
 
         <div
-          class="border shadow-sm w-auto shadow rounded bg-white mt-2 cursor"
+          class="border shadow-sm w-auto shadow mt-2 cursor rounded-pill p-2 fb-bg-color"
         >
-          <div class="row m-0 py-1 fb-bg-color text-white w-100 rounded">
-            <div class="col-1">
+          <div
+            class="row m-0 py-1 text-white w-100 p-2 rounded-pill d-flex justify-content-center"
+          >
+            <div class="col-auto">
               <i
                 class="fa fa-facebook-square text-white"
                 aria-hidden="true"
                 style="font-size: large"
               ></i>
             </div>
-            <div class="col-10 ms-2">
+            <div class="col-auto">
               <span class="fs-c-14">Continue with Facebook</span>
             </div>
           </div>
         </div>
       </div>
-      <div class="d-flex flex-column align-items-center mt-3">
-        <div class="row d-flex justify-content-center align-items-center">
-          <div class="list-group-item border-0 p-0 m-0 bg-color">
-            <input
-              class="form-check-input me-1"
-              type="checkbox"
-              value=""
-              aria-label="..."
-            />
-            <span class="fs-c-14"> Remember me </span>
-          </div>
-        </div>
-        <div class="row d-flex justify-content-center align-items-center">
-          <a href="#" class="fs-c-14">Forgot password?</a>
-        </div>
-      </div>
-      <div class="d-flex justify-content-center mt-4">
+
+      <!-- <div class="d-flex justify-content-center mt-4">
         <button
           type="button"
           class="btn theme-primary-color theme-bg-pc w-50 fw-bold shadow fs-c-14"
@@ -80,7 +77,7 @@
         >
           Sign in
         </button>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

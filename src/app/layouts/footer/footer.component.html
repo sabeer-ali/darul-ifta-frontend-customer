@@ -1,4 +1,11 @@
-<div>
+<div
+  *ngIf="
+    router.url != '/login' &&
+    router.url != '/user-home' &&
+    router.url != '/user-home/question-details/' &&
+    router.url != '/user-home/ask-fatwas'
+  "
+>
   <div class="row footer-container px-0 mx-0">
     <div
       class="col-md-4 logo-section d-flex flex-column align-items-md-center align-items-lg-center align-items-xl-center"
@@ -18,35 +25,36 @@
     </div>
 
     <div
-      class="col-md-4 d-flex flex-column align-items-md-center align-items-lg-center align-items-xl-center"
+      class="col-md-5 d-flex flex-column align-items-md-center align-items-lg-center align-items-xl-center justify-content-center"
     >
       <div class="useful-links">
-        <h4 class="">Useful Links</h4>
+        <h4 class="fw-bold">Useful Links</h4>
         <div class="hr-bar"></div>
         <ul>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Rules & Regulations</li>
-          <li>Privacy Policy</li>
-          <li>Terms and Conditions</li>
+          <li routerLink="about-us">About Us</li>
+          <li routerLink="contact-us">Contact Us</li>
+          <!-- <li routerLink="contact-us">Articles</li> -->
+          <li routerLink="rules-regulations">Rules & Regulations</li>
+          <li routerLink="privacy-policy">Privacy Policy</li>
+          <li routerLink="terms-conditions">Terms and Conditions</li>
         </ul>
       </div>
     </div>
 
     <div
-      class="col-md-4 app-social-media-section d-flex flex-column align-items-md-center align-items-lg-center align-items-xl-center"
+      class="col-md-3 app-social-media-section d-flex flex-column justify-content-center"
     >
-      <div class="app-store">
-        <div>
-          <h6>Mobile App</h6>
+      <div class="app-store row">
+        <div class="">
+          <h5 class="fw-bold">Mobile App</h5>
           <div>
             <img src="/assets/Images/google_play_stor-icon.svg" alt="" />
-            <img src="/assets/Images/app_store-icon.svg" alt="" />
+            <!-- <img src="/assets/Images/app_store-icon.svg" alt="" /> -->
           </div>
         </div>
       </div>
-      <div class="social-media my-4">
-        <h4>Follow Us</h4>
+      <div class="social-media my-4 row">
+        <h4 class="fw-bold">Follow Us</h4>
         <div class="">
           <img src="/assets/Images/fb-icon.svg" alt="" />
           <img src="/assets/Images/insta-icon.svg" alt="" />

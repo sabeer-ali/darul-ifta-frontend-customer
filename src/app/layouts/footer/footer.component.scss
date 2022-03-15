@@ -4,6 +4,9 @@
 }
 .footer-container {
   background-color: $theme-primary-color;
+  min-height: 350px;
+  font-family: "Marcellus";
+  font-weight: lighter;
 }
 
 .footer-container {
@@ -34,7 +37,9 @@
   font-size: $theme-f2;
 }
 
-// app-social-media-section
+.logo-section {
+  justify-content: center;
+}
 
 .app-social-media-section {
   color: #fff;
@@ -47,7 +52,7 @@
 }
 
 .app-store img {
-  width: 140px;
+  min-width: 140px;
   height: 40px;
   cursor: pointer;
 }
@@ -63,6 +68,9 @@
   text-align: center;
   padding: 0;
   margin: 0;
+  font-family: "Mulish";
+  font-size: small;
+  bottom: 0;
 }
 
 @media only screen and (min-width: 960px) {

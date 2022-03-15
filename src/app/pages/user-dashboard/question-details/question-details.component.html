@@ -1,92 +1,63 @@
-<div class="container mt-5">
+<div class="container mt-5 border rounded p-5 shadow my-5">
   <div>
-    <label for="" class="fw-bold">Status</label>
-    :
-    <span
-      [ngClass]="{
-        'bg-pending': userQuestionDetails?.status?.title === 'Pending'
-      }"
-    >
-      {{ userQuestionDetails?.status?.title }}</span
-    >
-    <hr />
+    <h4>
+      Details :-
+      <span class="fs-6 mx-3"> {{ userQuestionDetails?.status?.title }}</span>
+    </h4>
+    <hr class="w-25 mb-5" />
   </div>
+
   <div class="row">
     <div class="col">
-      <label for="exampleInputEmail1" class="form-label">Category</label>
-      <input
-        class="form-control col-md-4"
-        type="text"
-        aria-label=".form-control-sm example"
-        disabled
-        value="{{ userQuestionDetails?.category?.title }}"
-      />
+      <label class="form-label fw-bold">Category</label>
+      <p class="col-md-4 mt-3">
+        {{ userQuestionDetails?.category?.title }}
+      </p>
     </div>
     <div class="col">
       <label for="exampleInputEmail1" class="form-label">Madhab</label>
-      <input
-        class="form-control col-md-4"
-        type="text"
-        aria-label=".form-control-sm example"
-        disabled
-        value="{{ userQuestionDetails?.madhab?.title }}"
-      />
+      <p class="col-md-4 mt-3">
+        {{ userQuestionDetails?.madhab?.title }}
+      </p>
     </div>
     <div class="col">
       <label for="exampleInputEmail1" class="form-label">Language</label>
-      <input
-        class="form-control col-md-4"
-        type="text"
-        aria-label=".form-control-sm example"
-        disabled
-        value="{{ userQuestionDetails?.language?.title }}"
-      />
+      <p class="col-md-4 mt-3">
+        {{ userQuestionDetails?.language?.title }}
+      </p>
     </div>
   </div>
-
-  <div class="my-3">
+  <hr />
+  <div class="my-5">
     <div class="my-3">
       <label for="exampleInputEmail1" class="form-label">Short Question</label>
-      <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        value="{{ userQuestionDetails?.short_question }}"
-        disabled
-      />
+      <p class="mt-3">
+        {{ userQuestionDetails?.short_question }}
+      </p>
     </div>
 
-    <div class="my-3">
+    <div class="my-5">
       <label for="exampleInputPassword1" class="form-label"
         >Long Question</label
       >
-      <textarea
-        class="form-control"
-        disabled
-        value="{{ userQuestionDetails?.question }}"
-      ></textarea>
+      <p class="mt-3">
+        {{ userQuestionDetails?.question }}
+      </p>
     </div>
   </div>
-
+  <hr />
   <div *ngIf="userQuestionDetails?.mufti_answered !== 0" class="row">
     <div class="col">
       <label for="exampleInputEmail1" class="form-label">Answered By</label>
-      <input
-        type="email"
-        class="form-control"
-        value="{{ userQuestionDetails?.mufti?.name }}"
-        disabled
-      />
+      <p>
+        {{ userQuestionDetails?.mufti?.name }}
+      </p>
     </div>
     <div class="col">
       <label for="exampleInputEmail1" class="form-label">Verified By</label>
-      <input
-        type="email"
-        class="form-control"
-        value="{{ userQuestionDetails?.verifier?.name }}"
-        disabled
-      />
+      <p>
+        {{ userQuestionDetails?.verifier?.name }}
+      </p>
     </div>
   </div>
 </div>

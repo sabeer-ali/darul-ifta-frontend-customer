@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { CommonService } from 'src/app/core/service/common/common.service';
 import { QuestionService } from 'src/app/core/service/question/question.service';
 
@@ -10,15 +11,16 @@ import { QuestionService } from 'src/app/core/service/question/question.service'
 export class FatwasComponent implements OnInit {
   constructor(
     private commonService: CommonService,
-    private questionServices: QuestionService
+    private questionServices: QuestionService,
+    private titlePage: Title
   ) {}
   @Input() isHome = false;
 
   ngOnInit(): void {
+    this.titlePage.setTitle('Darulifta Fatwas ');
     this.getCategoryList();
     this.getMadhabList();
-    let parms = '?language=1&&status=8';
-    this.getQuestion(parms);
+    this.getQuestion('?status=8');
     this.getGeneralDetails();
   }
 
@@ -82,8 +84,10 @@ export class FatwasComponent implements OnInit {
       params = `?language=${this.languageId}&&madhab=${data.id}&&status=8`;
       this.getQuestion(params);
     } else if (type === 'tab') {
+      console.log('Tabs', data);
       this.languageId = data.id;
-      params = `?language=${data.id}&&status=8`;
+      if (this.languageId == 0) params = `?status=8`;
+      else params = `?language=${data.id}&&status=8`;
       this.getQuestion(params);
     }
   }

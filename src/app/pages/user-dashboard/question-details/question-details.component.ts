@@ -15,6 +15,7 @@ export class QuestionDetailsComponent implements OnInit {
     private questionService: QuestionService,
     private route: ActivatedRoute
   ) {}
+
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
     if (this.id) this.getQuestionList();
@@ -25,7 +26,6 @@ export class QuestionDetailsComponent implements OnInit {
     this.questionService.getQuestionItem(parms).subscribe((res) => {
       this.userQuestionDetails = res;
       this.userQuestionDetails = this.userQuestionDetails[0];
-      console.log('res', res);
     });
   }
 }

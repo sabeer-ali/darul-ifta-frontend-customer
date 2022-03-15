@@ -4,7 +4,6 @@ img {
 }
 .max-width {
   max-width: 60%;
-  text-align: justify;
 }
 
 .custom-btn {
@@ -247,4 +246,11 @@ ul li {
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
   /* For landscape layouts only */
+}
+
+.bg-custom {
+  background-image: url(/assets/Images/webback.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 10px;
 }

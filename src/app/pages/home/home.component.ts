@@ -1,5 +1,6 @@
 import { Component, Injector, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { TabDirective } from 'ngx-bootstrap/tabs';
 import { CommonService } from 'src/app/core/service/common/common.service';
 import { QuestionService } from 'src/app/core/service/question/question.service';
@@ -12,10 +13,12 @@ import { QuestionService } from 'src/app/core/service/question/question.service'
 export class HomeComponent implements OnInit {
   constructor(
     private commonService: CommonService,
-    private questionServices: QuestionService
+    private questionServices: QuestionService,
+    private titlePage: Title
   ) {}
 
   ngOnInit(): void {
+    this.titlePage.setTitle('Home - Darulifta kauzariyya');
     this.getCategoryList();
     this.getMadhabList();
     let parms = '?language=1';

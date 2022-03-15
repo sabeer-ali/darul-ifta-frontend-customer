@@ -19,6 +19,7 @@ export class AskFatwasComponent implements OnInit {
   madhabList: any;
   languageList: any;
   form: any;
+  isRtlLanguage = false;
 
   constructor(
     private commonServices: CommonService,
@@ -35,9 +36,18 @@ export class AskFatwasComponent implements OnInit {
     this.form = this.fb.group({
       madhab: ['', Validators.required],
       subcategory: ['', Validators.required],
-      language: [''],
-      short_question: [''],
+      language: ['', Validators.required],
+      short_question: ['', Validators.required],
       question: ['', Validators.required],
+    });
+
+    this.form.get('language').valueChanges.subscribe((x: any) => {
+      console.log('firstname value changed', x);
+      if (x.title === 'Urdu' || x.title === 'Arabic') {
+        this.isRtlLanguage = true;
+      } else {
+        this.isRtlLanguage = false;
+      }
     });
   }
 
