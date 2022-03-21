@@ -1,4 +1,4 @@
-<div class="container bg-white rounded shadow-sm p-4">
+<div class="container bg-white rounded shadow border p-4 my-5">
   <div class="row">
     <div>
       <span class="fw-bolder">Question ID : </span
@@ -17,36 +17,42 @@
   <hr />
 
   <div class="row">
-    <div class="my-3">
+    <div class="my-4">
       <span class="fw-bolder fs-6"> Title : </span>
       <br />
-
-      {{ questionDetails?.short_question }}
+      <div [ngClass]="{ drtl: rtlLanguage }">
+        {{ questionDetails?.short_question }}
+      </div>
     </div>
-    <div class="my-2">
-      <p class="">
-        <span class="fw-bolder fs-6"> Question : </span>
-        <br />
+    <div class="my-4">
+      <span class="fw-bolder fs-6"> Question : </span>
+      <br />
+      <div [ngClass]="{ drtl: rtlLanguage }">
         {{ questionDetails?.question }}
-      </p>
+      </div>
     </div>
-    <div class="my-2">
+    <div class="my-4">
       <span class="fw-bolder fs-6"> Answer : </span> <br />
-
-      {{ answerDetails?.answer }}
+      <div [ngClass]="{ drtl: rtlLanguage }">
+        {{ answerDetails?.answer }}
+      </div>
     </div>
   </div>
 
-  <div class="">
+  <div style="margin-top: 10em">
     <div class="row mx-auto rounded mt-4">
       <div class="col">
-        <span class="fw-bolder"> Written by : </span>
-        {{ answerDetails?.answered_by?.name }}
+        <span class="fw-bolder text-uppercase"> Written by : </span>
+        <span class="text-capitalize">
+          {{ answerDetails?.answered_by?.name }}
+        </span>
       </div>
 
       <div class="col">
-        <span class="fw-bolder"> Verified by : </span>
-        {{ answerDetails?.verified_by?.name || "N.A" }}
+        <span class="fw-bolder text-uppercase"> Verified by : </span>
+        <span class="text-capitalize">
+          {{ answerDetails?.verified_by?.name || "N.A" }}
+        </span>
       </div>
     </div>
   </div>

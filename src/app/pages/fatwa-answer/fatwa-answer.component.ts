@@ -18,6 +18,7 @@ export class FatwaAnswerComponent implements OnInit {
   id: any;
   answerDetails: any = null;
   questionDetails: any = null;
+  rtlLanguage = false;
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -39,6 +40,14 @@ export class FatwaAnswerComponent implements OnInit {
     this.questionService.getQuestionItem(params).subscribe((rez) => {
       this.questionDetails = rez;
       this.questionDetails = this.questionDetails[0];
+
+      console.log('11111', rez);
+
+      this.rtlLanguage =
+        this.questionDetails?.language?.id == 4 ||
+        this.questionDetails?.language?.id == 3
+          ? true
+          : false;
     });
   }
 }

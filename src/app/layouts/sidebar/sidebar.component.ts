@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 export interface RouteInfo {
   path: string;
@@ -17,8 +18,8 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/user-home/profile',
-    title: 'Logout',
-    icon: 'fa fa-columns',
+    title: 'Profile',
+    icon: 'fa fa-table',
     class: '',
   },
 ];
@@ -29,6 +30,7 @@ export const ROUTES: RouteInfo[] = [
   styleUrls: ['sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
+  constructor(private route: Router) {}
   public menuItems: any;
   status: boolean = false;
   clickEvent() {
@@ -36,5 +38,10 @@ export class SidebarComponent implements OnInit {
   }
   ngOnInit() {
     this.menuItems = ROUTES.filter((menuItem) => menuItem);
+  }
+
+  handleLogOut() {
+    sessionStorage.removeItem('userData');
+    this.route.navigateByUrl('/');
   }
 }

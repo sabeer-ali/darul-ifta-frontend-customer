@@ -71,30 +71,35 @@ export class AskFatwasComponent implements OnInit {
     });
   }
 
-  handleSubmit() {
+  async handleSubmit() {
     console.log('Form Data', this.form);
 
     const { question, short_question, madhab, subcategory, language } =
       this.form.value;
+    const lData = sessionStorage.getItem('userData');
+    if (lData) {
+      const userData = await JSON.parse(lData);
 
-    let payload = {
-      user_id: 1,
-      madhab: madhab.id,
-      category: subcategory.category_id,
-      sub_category: subcategory.id,
-      short_question,
-      question,
-      language: language.id,
-      status: 1,
-      mufti: null,
-      mufti_answered: 0,
-      verifier: null,
-      reject_by: null,
-      reject_reason: null,
-    };
-    this.userService.postQuestionItem(payload).subscribe((res) => {
-      this.form.reset();
-      this.location.back();
-    });
+      let payload = {
+        user_id: userData.id,
+        madhab: madhab.id,
+        category: subcategory.category_id,
+        sub_category: subcategory.id,
+        short_question,
+        question,
+        language: language.id,
+        status: 1,
+        mufti: null,
+        mufti_answered: 0,
+        verifier: null,
+        reject_by: null,
+        reject_reason: null,
+      };
+
+      this.userService.postQuestionItem(payload).subscribe((res) => {
+        this.form.reset();
+        this.location.back();
+      });
+    }
   }
 }

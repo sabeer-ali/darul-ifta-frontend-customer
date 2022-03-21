@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'ask-fatwas', component: AskFatwasComponent },
   { path: 'user-fatwas', component: FatwasComponent },
   { path: 'question-details/:id', component: QuestionDetailsComponent },
-
+  { path: 'profile', component: ProfileComponent },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 

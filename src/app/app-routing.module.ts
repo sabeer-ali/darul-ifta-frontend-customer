@@ -15,13 +15,14 @@ import { FatwaAnswerComponent } from './pages/fatwa-answer/fatwa-answer.componen
 import { RulesRegulationsComponent } from './pages/rules-regulations/rules-regulations.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditions.component';
+import { IsLoggedGuard } from './core/auth/is-logged.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Home' } },
   {
     path: 'ask-fatwas',
     component: AskFatwasComponent,
-    data: { title: 'Ask Fatwas' },
+    canActivate: [IsLoggedGuard],
   },
   { path: 'fatwas', component: FatwasComponent },
   { path: 'about-us', component: AboutUsComponent },
@@ -39,6 +40,7 @@ const routes: Routes = [
   {
     path: 'user-home',
     component: UserDashboardComponent,
+
     children: [
       {
         path: '',

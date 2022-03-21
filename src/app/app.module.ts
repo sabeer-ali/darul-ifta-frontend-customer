@@ -31,6 +31,13 @@ import { Title } from '@angular/platform-browser';
 import { RulesRegulationsComponent } from './pages/rules-regulations/rules-regulations.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditions.component';
+// signin with google, facebook
+import { SocialLoginModule } from 'angularx-social-login';
+import {
+  SocialAuthServiceConfig,
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+} from 'angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -64,6 +71,7 @@ import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditi
     FormsModule,
     SharedModule,
     CarouselModule,
+    SocialLoginModule,
   ],
   providers: [
     BsDropdownConfig,
@@ -73,6 +81,24 @@ import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditi
       multi: true,
     },
     Title,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '25200863348-ktb34v7rai8miagiqjin6i54jqj4iskl.apps.googleusercontent.com'
+            ),
+          },
+          // {
+          //   id: FacebookLoginProvider.PROVIDER_ID,
+          //   provider: new FacebookLoginProvider('2162866620526952'),
+          // },
+        ],
+      } as SocialAuthServiceConfig,
+    },
   ],
   bootstrap: [AppComponent],
 })

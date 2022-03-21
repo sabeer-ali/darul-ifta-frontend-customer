@@ -1,6 +1,6 @@
 @import "/src/styles.scss";
 .main-container {
-  padding: 3.58em 0;
+  padding: 3.58em;
 }
 
 .box-wrapper {
@@ -19,17 +19,37 @@
 .box-wrapper div {
   // margin-top: 0.8em;
 }
+.sub-container {
+  display: flex;
+  justify-content: flex-end;
+}
 
 @media only screen and (max-device-width: 480px) {
   .box-wrapper {
-    width: 300px;
+    min-width: auto;
+    min-height: auto;
+  }
+  .social-media-wrapper {
+    min-width: none;
+  }
+  .main-container {
+    padding: 1em;
+  }
+
+  .sub-container {
+    display: unset;
   }
 }
 @media only screen and (device-width: 768px) {
   .main-container {
   }
   .box-wrapper {
-    width: 300px;
+  }
+  .sub-container {
+    display: unset;
+  }
+  .main-container {
+    padding: 2em;
   }
 }
 

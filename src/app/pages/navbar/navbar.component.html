@@ -45,7 +45,7 @@
             <a
               class="nav-link custom-menu"
               aria-current="page"
-              routerLink="login"
+              routerLink="user-home"
               >Ask Question</a
             >
           </li>
@@ -88,7 +88,7 @@
                 aria-hidden="true"
               ></i>
             </a> -->
-            <button
+            <!-- <button
               id="button-basic"
               dropdownToggle
               type="button"
@@ -109,23 +109,34 @@
               role="menu"
               aria-labelledby="button-basic"
             >
-              <li role="menuitem">
-                <a
-                  class="dropdown-item"
-                  routerLink="profile"
-                  (click)="dropdown.isOpen = !dropdown.isOpen"
-                  >Profile</a
-                >
-              </li>
+              <div *ngIf="isLogged">
+                <li role="menuitem">
+                  <a
+                    class="dropdown-item"
+                    routerLink="profile"
+                    (click)="dropdown.isOpen = !dropdown.isOpen"
+                    >Profile</a
+                  >
+                </li>
 
-              <li role="menuitem">
+                <li role="menuitem">
+                  <a
+                    class="dropdown-item"
+                    (click)="handleLogOut()"
+                    dropdownToggle
+                    >Log Out</a
+                  >
+                </li>
+              </div>
+              <li role="menuitem" *ngIf="!isLogged">
                 <a
                   class="dropdown-item"
-                  (click)="dropdown.isOpen = !dropdown.isOpen"
-                  >Log Out</a
+                  dropdownToggle
+                  [routerLink]="['/login']"
+                  >Login</a
                 >
               </li>
-            </ul>
+            </ul> -->
           </li>
 
           <!-- <div
