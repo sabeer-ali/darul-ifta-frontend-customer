@@ -10,6 +10,8 @@ import { IsLoggedGuard } from 'src/app/core/auth/is-logged.guard';
 export class NavbarComponent implements OnInit, OnDestroy {
   isShown: boolean = false;
   isShowMenu = false;
+  isCollapsed = true;
+
   constructor(public router: Router, private isLoggedAuth: IsLoggedGuard) {}
 
   isLogged: any;
@@ -29,5 +31,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.isLogged = this.isLoggedAuth.canActivate();
+  }
+
+  navigate(url: any) {
+    this.router.navigateByUrl(url);
+    if (this.isCollapsed) this.isCollapsed = !this.isCollapsed;
   }
 }

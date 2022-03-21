@@ -38,6 +38,8 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider,
 } from 'angularx-social-login';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -72,6 +74,8 @@ import {
     SharedModule,
     CarouselModule,
     SocialLoginModule,
+    NgbCollapseModule,
+    NgbModule,
   ],
   providers: [
     BsDropdownConfig,

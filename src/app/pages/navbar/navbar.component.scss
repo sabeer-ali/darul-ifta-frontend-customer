@@ -1,7 +1,13 @@
-.img-logo {
+.navbar-log-wrapper .img-logo {
   width: 250px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.navbar-log-wrapper {
+  display: flex;
+  justify-content: center;
+}
 .min-height {
   max-height: 25px !important;
 }
@@ -18,20 +24,19 @@
   height: 30px !important;
 }
 
-.nav-link {
-  //   padding: 0 !important;
-}
-
 ul li {
   cursor: pointer;
 }
+
 ul li a {
   font-size: small;
 }
+
 form .custom-menu {
   font-size: smaller !important;
 }
-@media only screen and (max-device-width: 480px) {
+
+@media only screen and (max-width: 480px) {
   .navbar-container ::ng-deep .nav-item {
     margin-top: 8px;
   }
@@ -43,6 +48,21 @@ form .custom-menu {
   .search-nav {
     margin: 10px 0 4px 0;
   }
+
+  .navbar-wrapper .nav-item .custom-menu {
+    box-shadow: 0px 0px 0px 0px #cacaca;
+    padding: 10px;
+    border-bottom: 1px groove #fefefe;
+    border-radius: 0px;
+  }
+
+  .img-logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  // .navbar-wrapper {
+  //   border-bottom: 1px solid green;
+  // }
 }
 @media only screen and (device-width: 768px) {
   .navbar-container {

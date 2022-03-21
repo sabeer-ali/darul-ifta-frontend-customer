@@ -1,4 +1,4 @@
-<div class="" *ngIf="router.url != '/login'">
+<!-- <div class="" *ngIf="router.url != '/login'">
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid navbar-container">
       <div class="col-md-4 d-flex justify-content-center">
@@ -25,8 +25,8 @@
       </button>
       <div
         class="collapse justify-content-end navbar-collapse"
-        [ngClass]="{ show: isShown }"
         id="navbarTogglerDemo03"
+        [ngClass]="{ show: isShown }"
       >
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item">
@@ -80,104 +80,81 @@
             dropdown
             #dropdown="bs-dropdown"
             [autoClose]="false"
-          >
-            <!-- <a class="nav-link active custom-menu" aria-current="page">
-              <i
-                class="fa fa-user px-1"
-                style="font-size: larger"
-                aria-hidden="true"
-              ></i>
-            </a> -->
-            <!-- <button
-              id="button-basic"
-              dropdownToggle
-              type="button"
-              class="btn dropdown-toggle custom-menu"
-              aria-controls="dropdown-basic"
-            >
-              <i
-                class="fa fa-user px-1 text-secondary"
-                style="font-size: larger"
-                aria-hidden="true"
-              ></i>
-              <span class="caret"></span>
-            </button>
-            <ul
-              id="dropdown-basic"
-              *dropdownMenu
-              class="dropdown-menu ms-2"
-              role="menu"
-              aria-labelledby="button-basic"
-            >
-              <div *ngIf="isLogged">
-                <li role="menuitem">
-                  <a
-                    class="dropdown-item"
-                    routerLink="profile"
-                    (click)="dropdown.isOpen = !dropdown.isOpen"
-                    >Profile</a
-                  >
-                </li>
-
-                <li role="menuitem">
-                  <a
-                    class="dropdown-item"
-                    (click)="handleLogOut()"
-                    dropdownToggle
-                    >Log Out</a
-                  >
-                </li>
-              </div>
-              <li role="menuitem" *ngIf="!isLogged">
-                <a
-                  class="dropdown-item"
-                  dropdownToggle
-                  [routerLink]="['/login']"
-                  >Login</a
-                >
-              </li>
-            </ul> -->
-          </li>
-
-          <!-- <div
-            class="btn-group"
-            dropdown
-            #dropdown="bs-dropdown"
-            [autoClose]="false"
-          >
-            <button
-              id="button-basic"
-              dropdownToggle
-              type="button"
-              class="btn btn-primary dropdown-toggle"
-              aria-controls="dropdown-basic"
-            >
-              Menu <span class="caret"></span>
-            </button>
-            <ul
-              id="dropdown-basic"
-              *dropdownMenu
-              class="dropdown-menu"
-              role="menu"
-              aria-labelledby="button-basic"
-            >
-              <li role="menuitem">
-                <a class="dropdown-item" href="#">File</a>
-              </li>
-              <li role="menuitem">
-                <a class="dropdown-item" href="#">Edit</a>
-              </li>
-              <li role="menuitem">
-                <a class="dropdown-item" href="#">Search</a>
-              </li>
-              <li class="divider dropdown-divider"></li>
-              <li role="menuitem">
-                <a class="dropdown-item" href="#">Recents</a>
-              </li>
-            </ul>
-          </div> -->
+          ></li>
         </ul>
       </div>
     </div>
   </nav>
-</div>
+</div> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-wrapper">
+  <div class="col-md-4 col-lg-4 col-xs-5 mx-auto navbar-log-wrapper">
+    <a class="navbar-brand" routerLink="/">
+      <img
+        class="img-thumnails img-logo"
+        src="../../../assets/Images/logo-main-logo-blue.svg"
+        alt=""
+      />
+    </a>
+  </div>
+  <button
+    class="navbar-toggler me-2"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarColor03"
+    aria-controls="navbarColor03"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    (click)="isCollapsed = !isCollapsed"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div
+    class="collapse navbar-collapse navbar-wrapper"
+    id="navbarColor03"
+    [ngbCollapse]="isCollapsed"
+  >
+    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+      <li class="nav-item" (click)="navigate('/')">
+        <a class="nav-link active custom-menu" aria-current="page"
+          ><i
+            class="fa fa-home px-1"
+            aria-hidden="true"
+            style="font-size: larger"
+          ></i>
+        </a>
+      </li>
+      <li class="nav-item" (click)="navigate('user-home')">
+        <a class="nav-link custom-menu" aria-current="page">Ask Question</a>
+      </li>
+
+      <li class="nav-item" (click)="navigate('/fatwas')">
+        <a class="nav-link custom-menu" aria-current="page">Fatwa</a>
+      </li>
+
+      <form class="d-flex search-nav">
+        <input
+          class="form-control custom-menu"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+
+        <button class="btn btn-sm border custom-menu px-2" type="button">
+          <i
+            class="fa fa-search px-1"
+            aria-hidden="true"
+            style="font-size: larger"
+          ></i>
+        </button>
+      </form>
+
+      <li
+        class="btn-group nav-item"
+        dropdown
+        #dropdown="bs-dropdown"
+        [autoClose]="false"
+      ></li>
+    </ul>
+  </div>
+</nav>
