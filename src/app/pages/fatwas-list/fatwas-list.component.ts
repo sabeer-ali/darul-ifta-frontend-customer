@@ -14,17 +14,17 @@ import {
 export class FatwasListComponent implements OnInit, OnChanges {
   @Input() questions: any;
   questionsList: any = [];
+  q: any;
+
   constructor() {}
 
   ngOnInit(): void {
     if (this.questions) {
       this.questionsList = this.questions;
-      console.log('questions in 2', this.questions);
     }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('questions in 3', this.questions);
     this.questionsList = this.questions;
   }
 }

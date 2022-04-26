@@ -16,6 +16,7 @@ export class UserService {
   postLogin(body: any) {
     return this.http.post<Login>(`/user/login`, body);
   }
+
   getEmailValidate(params: any) {
     return this.http.get<Login>(`/user/checkMail${params}`);
   }

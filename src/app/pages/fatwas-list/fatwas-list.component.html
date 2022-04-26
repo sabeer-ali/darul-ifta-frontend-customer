@@ -1,42 +1,53 @@
 <div *ngIf="questionsList?.length; else noDataAvailable">
   <div
-    class="fatwal-list-wrapper shadow-sm my-4 mb-2"
-    *ngFor="let item of questionsList"
+    class="fatwal-list-wrapper shadow-sm my-4 mb-2 cursor"
+    *ngFor="
+      let item of questionsList | paginate: { itemsPerPage: 10, currentPage: q }
+    "
   >
-    <div class="short-q">
-      <h5 [routerLink]="['/answer-details', item.id]">
-        {{ item?.short_question }}
-      </h5>
-    </div>
-    <div class="long-q">
-      <h6>{{ item?.question }}</h6>
-    </div>
-    <div class="row author-details px-0 mx-0">
-      <div class="col-md-1">
-        <h6>
-          Q{{
-            item.id < 100
-              ? "00" + item.id
-              : item.id > 100 && item.id < 1000
-              ? "0" + item.id
-              : item.id
-          }}
-        </h6>
+    <div [routerLink]="['/answer-details', item.id]">
+      <div class="short-q">
+        <h5 [routerLink]="['/answer-details', item.id]">
+          {{ item?.short_question }}
+        </h5>
       </div>
-      <div class="col-md-3">
-        <h6>W By : {{ item?.mufti?.display_title || "N.A" }}</h6>
+      <div class="long-q">
+        <h6>{{ item?.question }}</h6>
       </div>
-      <!-- <div class="col-md-3">
+      <div class="row author-details px-0 mx-0 roundeded">
+        <div class="col-md-1">
+          <h6>
+            Q{{
+              item.id < 100
+                ? "00" + item.id
+                : item.id > 100 && item.id < 1000
+                ? "0" + item.id
+                : item.id
+            }}
+          </h6>
+        </div>
+        <div class="col-md-6">
+          <h6>W By : {{ item?.mufti?.display_title || "N.A" }}</h6>
+        </div>
+        <!-- <div class="col-md-3">
         <h6>Verified By : {{ item?.verifier?.name || "N.A" }}</h6>
       </div> -->
-      <div class="col-md-3">
-        <h6>Date : {{ item?.createdAt | date: "dd-MM-yyyy" }}</h6>
-      </div>
-      <div class="col-md-2">
-        <h6>Views : {{ item?.viewCount || 0 }}</h6>
+        <div class="col-md-3">
+          <h6>Date : {{ item?.createdAt | date: "dd-MM-yyyy" }}</h6>
+        </div>
+        <div class="col-md-2">
+          <h6>Views : {{ item?.viewCount || 0 }}</h6>
+        </div>
       </div>
     </div>
   </div>
+</div>
+
+<div
+  class="d-flex justify-content-end cust-container pagination-container my-4"
+  *ngIf="questionsList?.length > 10"
+>
+  <pagination-controls (pageChange)="q = $event"></pagination-controls>
 </div>
 
 <ng-template #noDataAvailable>

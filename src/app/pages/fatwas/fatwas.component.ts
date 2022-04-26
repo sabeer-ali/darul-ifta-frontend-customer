@@ -30,7 +30,7 @@ export class FatwasComponent implements OnInit {
   questionList: any = [];
   selectedCat: any;
   questionsList: any;
-  languageId: number = 1;
+  languageId: number = 0;
   generalDetails: any = {};
 
   getGeneralDetails() {
@@ -77,17 +77,26 @@ export class FatwasComponent implements OnInit {
   onSelectTab(data: any, type: string) {
     let params;
     if (type === 'cat') {
-      params = `?language=${this.languageId}&&sub_category=${data.id}&&status=8`;
+      params =
+        this.languageId > 0
+          ? `?language=${this.languageId}&sub_category=${data.id}&status=8`
+          : `?sub_category=${data.id}&status=10`;
       this.getQuestion(params);
     }
     if (type === 'mad') {
-      params = `?language=${this.languageId}&&madhab=${data.id}&&status=8`;
+      params =
+        this.languageId > 0
+          ? `?language=${this.languageId}&madhab=${data.id}&status=8`
+          : `?madhab=${data.id}&status=8`;
       this.getQuestion(params);
     } else if (type === 'tab') {
-      console.log('Tabs', data);
       this.languageId = data.id;
-      if (this.languageId == 0) params = `?status=8`;
-      else params = `?language=${data.id}&&status=8`;
+      console.log('Tabs', data);
+      if (this.languageId > 0) {
+        params = `?language=${data.id}&status=8`;
+      } else {
+        params = `?status=8`;
+      }
       this.getQuestion(params);
     }
   }

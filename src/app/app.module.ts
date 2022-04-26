@@ -41,6 +41,8 @@ import {
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,6 +78,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SocialLoginModule,
     NgbCollapseModule,
     NgbModule,
+    NgxPaginationModule,
   ],
   providers: [
     BsDropdownConfig,
@@ -93,13 +96,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '25200863348-ktb34v7rai8miagiqjin6i54jqj4iskl.apps.googleusercontent.com'
+              '1020688818490-em7sos46v23fe72v52md26njf242s29q.apps.googleusercontent.com'
             ),
           },
-          // {
-          //   id: FacebookLoginProvider.PROVIDER_ID,
-          //   provider: new FacebookLoginProvider('2162866620526952'),
-          // },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('638105230622627'),
+          },
         ],
       } as SocialAuthServiceConfig,
     },

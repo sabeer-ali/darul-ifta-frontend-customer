@@ -74,9 +74,9 @@
       <!-- custom details End -->
 
       <!-- portal details -->
-      <div class="col-md-9 portal-details mt-5 shadow p-2" *ngIf="isHome">
-        <!-- heading -->
-        <h6>Join Our Darul Ifta Portel</h6>
+      <!-- <div class="col-md-9 portal-details mt-5 shadow p-2" *ngIf="isHome"> -->
+      <!-- heading -->
+      <!-- <h6>Join Our Darul Ifta Portel</h6>
         <div class="">
           <div>
             <div class="input-group input-group-sm mb-3">
@@ -110,9 +110,9 @@
               </button>
             </div>
           </div>
-        </div>
-        <!-- visitor End -->
-      </div>
+        </div> -->
+      <!-- visitor End -->
+      <!-- </div> -->
       <!-- portal details End-->
     </div>
     <!-- side menus End -->
@@ -134,7 +134,7 @@
         <tab
           tab1
           heading="മലയാളം"
-          id="1"
+          id="2"
           #malayalam="tab"
           (selectTab)="onSelectTab($event, 'tab')"
           ><app-fatwas-list
@@ -145,7 +145,7 @@
         <tab
           tab2
           heading="English"
-          id="2"
+          id="1"
           #english="tab"
           (selectTab)="onSelectTab($event, 'tab')"
         >
@@ -157,7 +157,7 @@
         <tab
           tab3
           heading="اردو"
-          id="3"
+          id="4"
           #urdu="tab"
           (selectTab)="onSelectTab($event, 'tab')"
           ><app-fatwas-list
@@ -168,7 +168,7 @@
         <tab
           tab4
           heading="العربيــــــــــــــــــة"
-          id="4"
+          id="3"
           #arabic="tab"
           (selectTab)="onSelectTab($event, 'tab')"
           ><app-fatwas-list

@@ -1,16 +1,16 @@
 <div class="row justify-content-center">
-  <div class="col-lg-3 col-md-3 col-sm-3">
+  <div class="col-lg-2 col-md-2 col-sm-3">
     <div class="card card-stats shadow border roundeded">
       <div class="card-body">
         <div class="row">
-          <div class="col-5 col-md-4 d-flex align-items-center">
+          <div class="col-md-4 col-sm-12 d-flex align-items-center">
             <div class="icon-big text-center">
               <i class="fa fa-list-alt fa-3x" aria-hidden="true"></i>
             </div>
           </div>
-          <div class="col-7 col-md-8">
+          <div class="col-md-8">
             <div class="numbers">
-              <p class="card-category fs-6 fw-bold">Total Fatwas</p>
+              <p class="card-category fs-6 fw-bold">Fatwas</p>
               <p class="card-title fs-5 fw-bold">
                 {{ dashboardDetails?.total || 0 | number }}
               </p>
@@ -21,7 +21,7 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-3 col-md-3 col-sm-3">
+  <div class="col-lg-2 col-md-2 col-sm-3">
     <div class="card card-stats shadow border roundeded">
       <div class="card-body">
         <div class="row">
@@ -43,7 +43,7 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-3 col-md-3 col-sm-3">
+  <div class="col-lg-2 col-md-2 col-sm-3">
     <div class="card card-stats shadow border roundeded">
       <div class="card-body">
         <div class="row">
@@ -65,7 +65,7 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-3 col-md-3 col-sm-3">
+  <div class="col-lg-2 col-md-2 col-sm-3">
     <div class="card card-stats shadow border roundeded">
       <div class="card-body">
         <div class="row">
@@ -88,9 +88,9 @@
     </div>
   </div>
 </div>
-<div class="my-4">
-  <hr />
-  <table class="table">
+
+<div class="my-5">
+  <table class="table table-striped table-hover">
     <thead>
       <tr>
         <th scope="col">Id</th>
@@ -99,31 +99,35 @@
         <th scope="col">Category</th>
         <th scope="col">Status</th>
         <th scope="col">Language</th>
-        <th scope="col">Actions</th>
       </tr>
     </thead>
 
     <tbody *ngIf="userQuestionList.length; else noDataAvailable">
-      <tr *ngFor="let item of userQuestionList">
+      <tr
+        *ngFor="let item of userQuestionList"
+        [routerLink]="['/user-home/question-details', item.id]"
+      >
         <td>{{ item?.id }}</td>
         <td>{{ item?.short_question }}</td>
         <td>{{ item?.madhab?.title }}</td>
         <td>{{ item?.sub_category?.title }}</td>
         <td>
-          <span [ngClass]="{ 'warning-status': item?.status.id === 1 }">
+          <span
+            [ngClass]="{
+              pending: item?.status?.id == 1,
+              rejected: item.status?.id == 2,
+              recievedToDI: item?.status?.id == 4,
+              assMufthi: item?.status?.id == 5,
+              mufthiAns: item.status?.id == 6,
+              completeVerification: item.status?.id == 7,
+              published: item.status?.id == 8
+            }"
+          >
             {{ item?.status?.title }}
           </span>
         </td>
 
         <td>{{ item?.language?.title }}</td>
-        <td>
-          <span
-            class="btn btn-primary btn-sm"
-            [routerLink]="['/user-home/question-details', item.id]"
-          >
-            View
-          </span>
-        </td>
       </tr>
     </tbody>
   </table>

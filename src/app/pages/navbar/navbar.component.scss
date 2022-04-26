@@ -1,3 +1,14 @@
+.navbar-wrapper-main {
+  position: sticky;
+    top: 0;
+    z-index: 9999;
+    padding: 0.6em 0.2em;
+
+}
+.navbar-wrapper {
+    display: flex;
+    justify-content: end;
+}
 .navbar-log-wrapper .img-logo {
   width: 250px;
   margin-left: auto;
@@ -6,7 +17,8 @@
 
 .navbar-log-wrapper {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
+  padding: 0 ;
 }
 .min-height {
   max-height: 25px !important;
@@ -19,6 +31,7 @@
   margin: 0px 10px;
   font-weight: 500;
   color: #5e8399 !important;
+  height: 100%;
 }
 .custom-menu a {
   height: 30px !important;
@@ -35,6 +48,7 @@ ul li a {
 form .custom-menu {
   font-size: smaller !important;
 }
+form {height: 100%;}
 
 @media only screen and (max-width: 480px) {
   .navbar-container ::ng-deep .nav-item {
@@ -67,4 +81,21 @@ form .custom-menu {
 @media only screen and (device-width: 768px) {
   .navbar-container {
   }
+}
+
+
+.profile  img {
+  width: 45px;
+  height: 45px; 
+  border-radius: 100%
+}
+
+.nav-item a {
+  
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  padding: 0;
 }

@@ -1,12 +1,52 @@
 @import "/src/styles.scss";
 
-.warning-status {
+.pending, .rejected, .reSUbmitted, .recievedToDI, .assMufthi, .mufthiAns ,.completeVerification,  .published {  
+  background-color: brown;
+  color: aliceblue;
+  padding: 5px 15px;
+  border-radius: 1em;
 }
-.success-status {
+
+
+
+.pending {
+  background-color: #ffc107;
 }
-.rejected-status {
+.rejected {
+  background-color: #dc3545;  
+}
+.reSUbmitted {
+  background-color: #e91e63;
+}
+.recievedToDI {
+  background-color: #8bc34a;  
+}
+.assMufthi {
+  background-color: #00bcd4;    
+}
+.mufthiAns {
+  background-color: #009688;    
+}
+.completeVerification {
+  background-color: #ff9800;
+}
+.published {
+  background-color: #4caf50;  
 }
 
 table tbody tr td {
   vertical-align: middle;
 }
+
+.primary-color {
+  background-color: $theme-primary-color;
+}
+
+tbody tr td {
+  padding:  1em;
+}
+
+// tbody tr td :first-child  {
+  
+//   padding-top: 1em;
+// }

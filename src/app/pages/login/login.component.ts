@@ -87,11 +87,11 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  // signInWithFB(): void {
-  //   this.authService
-  //     .signIn(FacebookLoginProvider.PROVIDER_ID)
-  //     .then((x) => console.log('signInWithFB ==== >', x));
-  // }
+  signInWithFB(): void {
+    this.authService
+      .signIn(FacebookLoginProvider.PROVIDER_ID)
+      .then((x) => console.log('signInWithFB ==== >', x));
+  }
 
   signOut(): void {
     this.authService.signOut();

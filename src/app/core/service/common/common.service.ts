@@ -25,4 +25,11 @@ export class CommonService {
   getSubCategoryList() {
     return this.http.get('/subcategories');
   }
+
+  getLoginDetail() {
+    let data = sessionStorage.getItem('userData');
+    if (data) {
+      return JSON.parse(data);
+    } else null;
+  }
 }

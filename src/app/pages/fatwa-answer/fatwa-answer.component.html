@@ -1,82 +1,86 @@
-<div class="container bg-white rounded shadow border p-4 my-5">
-  <div class="row">
-    <div>
-      <span class="fw-bolder">Question ID : </span
-      >{{ answerDetails?.question_id }}
-    </div>
+<div class="py-5">
+  <div class="container bg-white rounded shadow-sm p-4">
+    <div class="row">
+      <div>
+        <span class="fw-bolder">Question ID : </span
+        >{{ answerDetails?.question_id }}
+      </div>
 
-    <div>
-      <span class="fw-bolder">Madhab :</span>
-      {{ questionDetails?.madhab?.title }}
-    </div>
-    <div>
-      <span class="fw-bolder">Category :</span>
-      {{ questionDetails?.category?.title }}
-    </div>
-  </div>
-  <hr />
-
-  <div class="row">
-    <div class="my-4">
-      <span class="fw-bolder fs-6"> Title : </span>
-      <br />
-      <div [ngClass]="{ drtl: rtlLanguage }">
-        {{ questionDetails?.short_question }}
+      <div>
+        <span class="fw-bolder">Madhab :</span>
+        {{ questionDetails?.madhab?.title }}
+      </div>
+      <div>
+        <span class="fw-bolder">Category :</span>
+        {{ questionDetails?.category?.title }}
       </div>
     </div>
-    <div class="my-4">
-      <span class="fw-bolder fs-6"> Question : </span>
-      <br />
-      <div [ngClass]="{ drtl: rtlLanguage }">
-        {{ questionDetails?.question }}
-      </div>
-    </div>
-    <div class="my-4">
-      <span class="fw-bolder fs-6"> Answer : </span> <br />
-      <div [ngClass]="{ drtl: rtlLanguage }">
-        {{ answerDetails?.answer }}
-      </div>
-    </div>
-  </div>
+    <hr />
 
-  <div style="margin-top: 10em">
-    <div class="row mx-auto rounded mt-4">
-      <div class="col">
-        <span class="fw-bolder text-uppercase"> Written by : </span>
-        <span class="text-capitalize">
-          {{ answerDetails?.answered_by?.name }}
+    <div class="row">
+      <div class="my-4">
+        <span class="fw-bolder fs-6"> Title : </span>
+        <br />
+        <div [ngClass]="{ drtl: rtlLanguage }">
+          {{ questionDetails?.short_question }}
+        </div>
+      </div>
+      <div class="my-4">
+        <span class="fw-bolder fs-6"> Question : </span>
+        <br />
+        <div [ngClass]="{ drtl: rtlLanguage }">
+          {{ questionDetails?.question }}
+        </div>
+      </div>
+      <div class="my-4">
+        <span class="fw-bolder fs-6"> Answer : </span> <br />
+        <div [ngClass]="{ drtl: rtlLanguage }">
+          {{ answerDetails?.answer }}
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 10em">
+      <div class="row mx-auto rounded mt-4">
+        <div class="col">
+          <span class="fw-bolder text-uppercase"> Written by : </span>
+          <span class="text-capitalize">
+            {{ answerDetails?.answered_by?.name }}
+          </span>
+        </div>
+
+        <div class="col">
+          <span class="fw-bolder text-uppercase"> Verified by : </span>
+          <span class="text-capitalize">
+            {{ answerDetails?.verified_by?.name || "N.A" }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <div class="pb-5 mb-5">
+      <div class="drtl" *ngFor="let data of answerDetails?.reference">
+        <span class="drtl mb-5" *ngIf="data?.quotes">
+          <span class="fw-bolder"> - </span>
+          {{ data?.quotes }}
+        </span>
+        <br />
+        <br />
+        <span class="drtl" *ngIf="data?.pgNo">
+          <span class="fw-bolder"> - </span>
+          {{ data?.pgNo }}
+        </span>
+
+        <span class="drtl" *ngIf="data?.vol">
+          <span class="fw-bolder mx-4">/</span>
+          {{ data?.vol }}
+        </span>
+        <span class="drtl" *ngIf="data?.bookName">
+          <span class="fw-bolder mx-4">/</span>
+          {{ data?.bookName }}
         </span>
       </div>
-
-      <div class="col">
-        <span class="fw-bolder text-uppercase"> Verified by : </span>
-        <span class="text-capitalize">
-          {{ answerDetails?.verified_by?.name || "N.A" }}
-        </span>
-      </div>
-    </div>
-  </div>
-
-  <hr />
-
-  <div class="pb-5 mb-5">
-    <div class="drtl">
-      <span class="drtl" *ngIf="answerDetails?.reference?.pgNo">
-        <span class="fw-bolder">/ </span>
-        {{ answerDetails?.reference?.pgNo }}
-      </span>
-      <span class="drtl" *ngIf="answerDetails?.reference?.vol">
-        <span class="fw-bolder">/ </span>
-        {{ answerDetails?.reference?.vol }}
-      </span>
-      <span class="drtl" *ngIf="answerDetails?.reference?.bookName">
-        <span class="fw-bolder">/ </span>
-        {{ answerDetails?.reference?.bookName }}
-      </span>
-      <span class="drtl" *ngIf="answerDetails?.reference?.quotes">
-        <span class="fw-bolder"> / </span>
-        {{ answerDetails?.reference?.quotes }}
-      </span>
     </div>
   </div>
 </div>

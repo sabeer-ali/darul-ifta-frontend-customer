@@ -5,7 +5,7 @@
     id="sidebar-wrapper"
     [ngClass]="status ? 'hide' : 'show'"
   >
-    <div class="sidebar-heading">Darul Iftha</div>
+    <div class="sidebar-heading">Darul Ifta - Home</div>
     <div class="list-group list-group-flush">
       <li *ngFor="let item of menuItems">
         <a
@@ -15,7 +15,7 @@
           {{ item.title }}
         </a>
       </li>
-      <li>
+      <li class="cursor">
         <a
           class="list-group-item list-group-item-action"
           (click)="handleLogOut()"
