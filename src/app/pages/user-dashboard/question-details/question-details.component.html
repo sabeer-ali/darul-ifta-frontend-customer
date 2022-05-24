@@ -40,7 +40,7 @@
       <label for="exampleInputPassword1" class="form-label"
         >Long Question</label
       >
-      <p class="mt-3">
+      <p class="mt-3" [innerHtml]="userQuestionDetails?.question">
         {{ userQuestionDetails?.question }}
       </p>
     </div>
@@ -48,7 +48,7 @@
   <div class="my-5">
     <div class="my-3">
       <label for="exampleInputEmail1" class="form-label">Answer </label>
-      <p class="mt-3">
+      <p class="mt-3" [innerHtml]="answerDetails?.answer">
         {{ answerDetails?.answer }}
       </p>
     </div>

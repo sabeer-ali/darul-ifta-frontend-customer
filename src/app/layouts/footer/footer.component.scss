@@ -66,11 +66,20 @@
   color: #fff;
   width: 100%;
   text-align: center;
-  padding: 0;
+  padding: 1em 0.5em;
   margin: 0;
   font-family: "Mulish";
-  font-size: small;
+  font-size: 14px;
   bottom: 0;
+}
+
+.identity a {
+  color: #00c5cd;
+  text-decoration: none;
+}
+.identity a:hover {
+  color: #00f7ff;
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 960px) {

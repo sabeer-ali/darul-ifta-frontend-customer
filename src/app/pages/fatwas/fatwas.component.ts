@@ -1,4 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { CommonService } from 'src/app/core/service/common/common.service';
 import { QuestionService } from 'src/app/core/service/question/question.service';
@@ -7,8 +13,9 @@ import { QuestionService } from 'src/app/core/service/question/question.service'
   selector: 'app-fatwas',
   templateUrl: './fatwas.component.html',
   styleUrls: ['./fatwas.component.scss'],
+  providers: [QuestionService],
 })
-export class FatwasComponent implements OnInit {
+export class FatwasComponent implements OnInit, OnChanges {
   constructor(
     private commonService: CommonService,
     private questionServices: QuestionService,
@@ -20,9 +27,11 @@ export class FatwasComponent implements OnInit {
     this.titlePage.setTitle('Darulifta Fatwas ');
     this.getCategoryList();
     this.getMadhabList();
-    this.getQuestion('?status=8');
+    this.getQuestion('?status=8&&field=createdAt&orderBy=DESC');
     this.getGeneralDetails();
   }
+
+  ngOnChanges(changes: SimpleChanges): void {}
 
   categoryList: any = [];
   subCategoryList: any = [];

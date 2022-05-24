@@ -24,14 +24,13 @@ export class UserHomeComponent implements OnInit {
     if (lData) {
       const userData = await JSON.parse(lData);
       this.userId = userData?.id;
+      this.getQuestionList();
+      this.getCounts();
     }
-    this.getQuestionList();
-    this.getCounts();
   }
 
   async getCounts() {
     // Edit needed
-
     this.questionService
       .getQuestionStatusCounts(this.userId)
       .subscribe((res) => {

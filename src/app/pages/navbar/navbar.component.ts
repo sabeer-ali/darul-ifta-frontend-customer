@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
 import { IsLoggedGuard } from 'src/app/core/auth/is-logged.guard';
 import { CommonService } from 'src/app/core/service/common/common.service';
+import { QuestionService } from 'src/app/core/service/question/question.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,11 +14,13 @@ export class NavbarComponent implements OnInit, OnDestroy, DoCheck {
   isShowMenu = false;
   isCollapsed = true;
   loginDetails: any;
+  searchKey = '';
 
   constructor(
     public router: Router,
     private isLoggedAuth: IsLoggedGuard,
-    private CommonService: CommonService
+    private CommonService: CommonService,
+    private questionServices: QuestionService
   ) {}
 
   isLogged: any;
@@ -57,5 +60,14 @@ export class NavbarComponent implements OnInit, OnDestroy, DoCheck {
     } else {
       this.router.navigateByUrl('/login');
     }
+  }
+
+  searchFatwas() {
+    console.log('Search Key', this.searchKey);
+    let parms = `?key=${this.searchKey}`;
+
+    this.questionServices.getQuestionItem(parms).subscribe((res) => {
+      console.log('RESxxxx', res);
+    });
   }
 }

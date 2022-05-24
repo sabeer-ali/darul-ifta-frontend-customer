@@ -135,16 +135,22 @@
           <a class="nav-link custom-menu" aria-current="page">Fatwa</a>
         </li>
 
-        <li class="nav-item" (click)="navigate('/fatwas')">
+        <li class="nav-item">
           <form class="d-flex search-nav">
             <input
               class="form-control custom-menu"
               type="search"
               placeholder="Search"
               aria-label="Search"
+              [(ngModel)]="searchKey"
+              [ngModelOptions]="{ standalone: true }"
             />
 
-            <button class="btn btn-sm border custom-menu px-2" type="button">
+            <button
+              class="btn btn-sm border custom-menu px-2"
+              type="button"
+              (click)="searchFatwas()"
+            >
               <i
                 class="fa fa-search px-1"
                 aria-hidden="true"

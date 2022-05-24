@@ -28,13 +28,19 @@
       <div class="my-4">
         <span class="fw-bolder fs-6"> Question : </span>
         <br />
-        <div [ngClass]="{ drtl: rtlLanguage }">
+        <div
+          [innerHtml]="questionDetails?.question"
+          [ngClass]="{ drtl: rtlLanguage }"
+        >
           {{ questionDetails?.question }}
         </div>
       </div>
       <div class="my-4">
         <span class="fw-bolder fs-6"> Answer : </span> <br />
-        <div [ngClass]="{ drtl: rtlLanguage }">
+        <div
+          [innerHtml]="answerDetails?.answer"
+          [ngClass]="{ drtl: rtlLanguage }"
+        >
           {{ answerDetails?.answer }}
         </div>
       </div>

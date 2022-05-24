@@ -5,6 +5,7 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fatwas-list',
@@ -15,10 +16,13 @@ export class FatwasListComponent implements OnInit, OnChanges {
   @Input() questions: any;
   questionsList: any = [];
   q: any;
+  url: any;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
+    console.log(this.router.url);
+    this.url = this.router.url;
     if (this.questions) {
       this.questionsList = this.questions;
     }

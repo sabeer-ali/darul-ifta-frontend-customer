@@ -45,7 +45,7 @@
 
 <div
   class="d-flex justify-content-end cust-container pagination-container my-4"
-  *ngIf="questionsList?.length > 10"
+  *ngIf="questionsList?.length > 10 && url !== '/'"
 >
   <pagination-controls (pageChange)="q = $event"></pagination-controls>
 </div>

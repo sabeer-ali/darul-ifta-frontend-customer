@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
-import { AskFatwasComponent } from './pages/ask-fatwas/ask-fatwas.component';
+
 import { FatwasComponent } from './pages/fatwas/fatwas.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './layouts/footer/footer.component';
@@ -50,7 +50,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AboutUsComponent,
     ContactUsComponent,
     NavbarComponent,
-    AskFatwasComponent,
+
     FatwasComponent,
     FooterComponent,
     FatwasListComponent,
