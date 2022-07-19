@@ -1,12 +1,19 @@
 @import "/src/styles.scss";
 .main-container {
-  padding: 3.58em;
+  // padding: 3.58em 3.58em 0 3.58em;
+  background-image: url("../../../assets/Images/login_bg.jpg");
+  height: 100vh;
+  display: flex;
+  justify-content: end;
 }
 
 .box-wrapper {
-  min-width: 470px;
-  min-height: 600px;
+  min-width: 450px;
+  height: 620px;
   border-radius: 15px;
+  background-color: #fff;
+  align-self: center;
+  margin-right: 4em;
 }
 
 .bg-color {
@@ -22,6 +29,18 @@
 .sub-container {
   display: flex;
   justify-content: flex-end;
+}
+
+.noProfilePic {
+  background-color: #689f38;
+  color: #fff;
+  width: 50px;
+  height: 40px;
+  border-radius: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em 0.5em 0;
 }
 
 @media only screen and (max-device-width: 480px) {

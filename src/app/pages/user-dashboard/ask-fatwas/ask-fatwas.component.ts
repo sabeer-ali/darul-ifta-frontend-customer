@@ -8,6 +8,7 @@ import {
   FormGroup,
 } from '@angular/forms';
 import { QuestionService } from 'src/app/core/service/question/question.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ask-fatwas',
@@ -25,7 +26,8 @@ export class AskFatwasComponent implements OnInit {
     private commonServices: CommonService,
     private fb: FormBuilder,
     private userService: QuestionService,
-    private location: Location
+    private location: Location,
+    private routes: Router
   ) {}
 
   ngOnInit(): void {
@@ -98,7 +100,9 @@ export class AskFatwasComponent implements OnInit {
 
       this.userService.postQuestionItem(payload).subscribe((res) => {
         this.form.reset();
-        this.location.back();
+        this.routes.navigate(['/user-home']).then(() => {
+          window.location.reload();
+        });
       });
     }
   }

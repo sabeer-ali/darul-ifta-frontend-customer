@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
       .subscribe((res) => {
         console.log('Res', res);
         if (res.status) {
-          this.userDetails = res;
+          this.userDetails = res?.data;
         } else {
           this.error.message = res.message;
         }
@@ -78,9 +78,7 @@ export class LoginComponent implements OnInit {
 
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((x) => {
-      console.log('signInWithGoogle =========>', x);
       this.userAuthService.postUserGoogleAuth(x).subscribe((res) => {
-        console.log('signInWithGoogle =========> RES', res);
         sessionStorage.setItem('userData', JSON.stringify(res));
         this.route.navigateByUrl('/user-home');
       });
@@ -96,4 +94,14 @@ export class LoginComponent implements OnInit {
   signOut(): void {
     this.authService.signOut();
   }
+
+  getName(name: string) {
+    console.log('NAME', name);
+    return (
+      name?.split(' ')[0]?.charAt(0).toUpperCase() +
+      name?.split(' ')[1]?.charAt(0).toUpperCase()
+    );
+  }
 }
+
+// sabeerali099@gmail.com

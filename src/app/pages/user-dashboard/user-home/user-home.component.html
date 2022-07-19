@@ -123,7 +123,13 @@
               published: item.status?.id == 8
             }"
           >
-            {{ item?.status?.title }}
+            {{
+              item?.status?.title === "Assigned Mufti"
+                ? "Assign Mufti"
+                : item?.status?.title === "Received to Darul Ifta"
+                ? "Received - Ifta"
+                : item?.status?.title
+            }}
           </span>
         </td>
 

@@ -1,73 +1,69 @@
 @import "/src/styles.scss";
 
 .main-wrapper {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .profile-1 {
-    
 }
 .profile-img span img {
-    position: relative;
-    left: -120px;
-    bottom: -100px;
-    background-color: #fff;
-    border-radius: 100%;
-    padding: 0.1em;
+  position: relative;
+  left: -120px;
+  bottom: -100px;
+  background-color: #fff;
+  border-radius: 100%;
+  padding: 0.1em;
 }
-.profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 100%;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.profile-img,
+.profile-img-1 {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img-1 {
+  background-color: #d8d8d8;
 }
 
 .fatwa-details div {
-    height: 50px;
-    vertical-align: middle;
-}
-
-.fatwa-details div span {
-    
+  height: 50px;
+  vertical-align: middle;
 }
 
 .fatwa-details div:nth-child(2) {
-    
-    width: 200px;
+  width: 200px;
 }
 
 .fatwa-details div:nth-child(1) {
- width: 250px;
+  width: 250px;
 }
 .fatwa-details div:nth-child(3) {
-    
-    background-color: #10a3fe;
-    width: 400px;
-    text-align: center;
-    vertical-align: middle;
+  background-color: #10a3fe;
+  width: 400px;
+  text-align: center;
+  vertical-align: middle;
 }
 
-.profile-2  {
+.profile-2 {
 }
 
-.fatwas-counts div span{
-    // color: #fff;
-    font-weight: 500;
+.fatwas-counts div span {
+  // color: #fff;
+  font-weight: 500;
 }
 .fatwas-counts div {
-    
-    padding: 0.5em 0;
-    text-align: center;
-    margin: 0 5px;
-    border-radius: 8px;
-    border: 1px solid #c6c6c6;
+  padding: 0.5em 0;
+  text-align: center;
+  margin: 0 5px;
+  border-radius: 8px;
+  border: 1px solid #c6c6c6;
 }
 
 // Fatwa List Wrapper
-
 
 .short-q,
 .long-q,
@@ -94,7 +90,7 @@
 
 .author-details div:first-child h6 {
   background-color: $theme-primary-color;
-  padding: 7px  15px;
+  padding: 7px 15px;
   color: #fff;
   border-radius: 5px;
   margin: 0.8em 0;
@@ -104,4 +100,79 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.fatwas-counts .questions,
+.fatwas-counts .published,
+.fatwas-counts .pending,
+.fatwas-counts .rejected {
+  cursor: pointer;
+}
+
+.fatwas-counts .questions:hover {
+  background-color: #ff9800;
+  color: #fff;
+}
+
+.fatwas-counts .published:hover {
+  background-color: #4caf50;
+  color: #fff;
+}
+.fatwas-counts .pending:hover {
+  background-color: #ffc107;
+  color: #fff;
+}
+.fatwas-counts .rejected:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+@import "/src/styles.scss";
+
+.pending,
+.rejected,
+.reSUbmitted,
+.recievedToDI,
+.assMufthi,
+.mufthiAns,
+.completeVerification,
+.published {
+  background-color: brown;
+  color: aliceblue;
+  padding: 5px 15px;
+  border-radius: 1em;
+}
+
+.pending {
+  background-color: #ffc107;
+}
+.rejected {
+  background-color: #dc3545;
+}
+.reSUbmitted {
+  background-color: #e91e63;
+}
+.recievedToDI {
+  background-color: #8bc34a;
+  padding: 5px 8px;
+}
+.assMufthi {
+  background-color: #00bcd4;
+}
+.mufthiAns {
+  background-color: #009688;
+}
+.completeVerification {
+  background-color: #ff9800;
+}
+.published {
+  background-color: #4caf50;
+}
+
+.cursor {
+  cursor: pointer;
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, DoCheck } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, NavigationStart } from '@angular/router';
 import { IsLoggedGuard } from 'src/app/core/auth/is-logged.guard';
 import { CommonService } from 'src/app/core/service/common/common.service';
 import { QuestionService } from 'src/app/core/service/question/question.service';
@@ -15,19 +15,26 @@ export class NavbarComponent implements OnInit, OnDestroy, DoCheck {
   isCollapsed = true;
   loginDetails: any;
   searchKey = '';
+  url: any;
 
   constructor(
-    public router: Router,
+    private router: Router,
     private isLoggedAuth: IsLoggedGuard,
     private CommonService: CommonService,
-    private questionServices: QuestionService
-  ) {}
+    private questionServices: QuestionService,
+    private activatedRoute: ActivatedRoute
+  ) {
+    router.events.subscribe((e) => {
+      if (e instanceof NavigationStart) {
+        this.url = e?.url;
+      }
+    });
+  }
 
   isLogged: any;
   ngOnInit(): void {
     this.isLogged = this.isLoggedAuth.canActivate();
     this.loginDetails = this.CommonService.getLoginDetail();
-    console.log('this.loginDetails', this.loginDetails);
   }
 
   ngDoCheck() {

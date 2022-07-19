@@ -36,29 +36,37 @@
         </div>
       </div>
       <div class="my-4">
-        <span class="fw-bolder fs-6"> Answer : </span> <br />
+        <span class="fw-bolder fs-6"> Answer : </span>
+        <br />
+        <div class="fw-bolder fs-6 drtl">
+          الجواب وبالله التوفيق حامداً و مصلّياً
+        </div>
+
+        <br />
+
         <div
           [innerHtml]="answerDetails?.answer"
           [ngClass]="{ drtl: rtlLanguage }"
         >
           {{ answerDetails?.answer }}
         </div>
+        <div class="fw-bolder fs-6 drtl mt-3">والله أعلم بالصواب</div>
       </div>
     </div>
-
-    <div style="margin-top: 10em">
+    <hr />
+    <div>
       <div class="row mx-auto rounded mt-4">
         <div class="col">
           <span class="fw-bolder text-uppercase"> Written by : </span>
           <span class="text-capitalize">
-            {{ answerDetails?.answered_by?.name }}
+            {{ answerDetails?.answered_by?.display_title }}
           </span>
         </div>
 
         <div class="col">
           <span class="fw-bolder text-uppercase"> Verified by : </span>
           <span class="text-capitalize">
-            {{ answerDetails?.verified_by?.name || "N.A" }}
+            {{ questionDetails?.verifier?.display_title || "N.A" }}
           </span>
         </div>
       </div>
@@ -68,24 +76,23 @@
     <div class="pb-5 mb-5">
       <div class="drtl" *ngFor="let data of answerDetails?.reference">
         <span class="drtl mb-5" *ngIf="data?.quotes">
-          <span class="fw-bolder"> - </span>
           {{ data?.quotes }}
         </span>
         <br />
         <br />
-        <span class="drtl" *ngIf="data?.pgNo">
-          <span class="fw-bolder"> - </span>
-          {{ data?.pgNo }}
-        </span>
-
-        <span class="drtl" *ngIf="data?.vol">
-          <span class="fw-bolder mx-4">/</span>
-          {{ data?.vol }}
-        </span>
         <span class="drtl" *ngIf="data?.bookName">
-          <span class="fw-bolder mx-4">/</span>
+          <span class="fw-bolder">(</span>
           {{ data?.bookName }}
         </span>
+        <span class="drtl" *ngIf="data?.vol">
+          <span class="fw-bolder mx-1">-</span>
+          {{ data?.vol }}
+        </span>
+        <span class="drtl" *ngIf="data?.pgNo">
+          <span class="fw-bolder mx-1"> - </span>
+          {{ data?.pgNo }}
+        </span>
+        <span class="fw-bolder">)</span>
       </div>
     </div>
   </div>

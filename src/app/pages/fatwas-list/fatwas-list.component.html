@@ -7,9 +7,9 @@
   >
     <div [routerLink]="['/answer-details', item.id]">
       <div class="short-q">
-        <h5 [routerLink]="['/answer-details', item.id]">
+        <h6 [routerLink]="['/answer-details', item.id]">
           {{ item?.short_question }}
-        </h5>
+        </h6>
       </div>
       <div class="long-q">
         <h6>{{ item?.question }}</h6>
@@ -29,14 +29,11 @@
         <div class="col-md-6">
           <h6>W By : {{ item?.mufti?.display_title || "N.A" }}</h6>
         </div>
-        <!-- <div class="col-md-3">
-        <h6>Verified By : {{ item?.verifier?.name || "N.A" }}</h6>
-      </div> -->
         <div class="col-md-3">
           <h6>Date : {{ item?.createdAt | date: "dd-MM-yyyy" }}</h6>
         </div>
         <div class="col-md-2">
-          <h6>Views : {{ item?.viewCount || 0 }}</h6>
+          <h6>Views : {{ item?.views || 0 }}</h6>
         </div>
       </div>
     </div>

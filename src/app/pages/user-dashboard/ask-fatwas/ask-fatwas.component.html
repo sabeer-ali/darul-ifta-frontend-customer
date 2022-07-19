@@ -1,8 +1,5 @@
-<div
-  class="d-flex align-items-center justify-content-center"
-  style="height: 100vh"
->
-  <div class="w-100 shadow rounded border pt-5">
+<div class="d-flex align-items-center justify-content-center">
+  <div class="w-75 rounded pt-2 my-2 border">
     <form action="" [formGroup]="form" class="">
       <div class="d-flex justify-content-center">
         <div class="row col-10">
@@ -86,7 +83,7 @@
 
     <div class="d-flex justify-content-center">
       <button
-        class="btn btn-success my-5"
+        class="btn-blue w-75 my-4"
         (click)="handleSubmit()"
         [disabled]="form.status !== 'VALID'"
       >
